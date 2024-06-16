@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Состав - Fastiv Spirit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-section">
+            <ul class="player-list">
+                <li>
+                    <span class="player-name" onclick="showDescription('dima')">SoulHarvester</span>
+                    <div id="dima" class="player-description">
+                        <img class="player-imag-dima" src="img/Dima.jpg" alt="">
+                        <p><strong>Имя:</strong> Дмитрий</p>
+                        <p><strong>Возраст:</strong> 23 лет</p>
+                        <p><strong>Роль:</strong> Mid</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="player-name" onclick="showDescription('artem1')">BigDaddy</span>
+                    <div id="artem1" class="player-description">
+                        <img class="player-imag" src="img/Shika.jpg" alt="">
+                        <p><strong>Имя:</strong> Артем</p>
+                        <p><strong>Возраст:</strong> 26 лет</p>
+                        <p><strong>Роль:</strong> Soft Support</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="player-name" onclick="showDescription('artem2')">АРТЕМ</span>
+                    <div id="artem2" class="player-description">
+                        <img class="player-imag" src="img/Gora.jpg" alt="">
+                        <p><strong>Имя:</strong> Артем</p>
+                        <p><strong>Возраст:</strong> 20 лет</p>
+                        <p><strong>Роль:</strong> Offlane</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="player-name" onclick="showDescription('kirim')">Snake</span>
+                    <div id="kirim" class="player-description">
+                        <img class="player-imag" src="img/Snake.jpg" alt="">
+                        <p><strong>Имя:</strong> Кирим</p>
+                        <p><strong>Возраст:</strong> 22 лет</p>
+                        <p><strong>Роль:</strong> Full Support</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="player-name" onclick="showDescription('Hohmatch')">Hohmatch</span>
+                    <div id="Hohmatch" class="player-description">
+                        <img class="player-imag" src="img/Hohma.jpg" alt="">
+                        <p><strong>Имя:</strong> Артем</p>
+                        <p><strong>Возраст:</strong> 21 лет</p>
+                        <p><strong>Роль:</strong> Carry</p>
+                    </div>
+                </li>
+            </ul>
+            <img class="image-back" src="img/image.png" alt="">
+    </div>
+    <div class="button-container">
+        <button onclick="navigateTo('news')">Новости</button>
+        <button onclick="navigateTo('roster')">Состав</button>
+        <button onclick="navigateTo('about')">О нас</button>
+        <button onclick="navigateTo('index')">На главную</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
