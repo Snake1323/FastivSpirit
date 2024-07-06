@@ -116,26 +116,29 @@ button:hover {
     color: white;
     text-transform: uppercase;
     padding: 10px 70px 20px 22px;
-    padding-bottom: 30px;
     display: block;
-    width: 1500px;
+    width: 100%;
+    background: #333;
+    margin-bottom: 10px;
 }
 
 .player-description {
     display: none;
     margin-top: 10px;
-    padding: 10px 70px 20px 22px;
-    padding-bottom: 30px;
-    border: 1px solid #ccc;
+    padding: 20px;
+    border: 1px solid #555;
     border-radius: 5px;
     text-align: left;
-    background: #000;
+    background: #111;
     color: #fff;
+    overflow: hidden; /* Добавляем, чтобы изображение не выходило за рамки */
 }
-.player-imag {
-    height: 400px;
-    bottom: 400px;
-    
+
+.player-imag, .player-imag-dima {
+    width: 300px; /* Уменьшаем размер изображения */
+    height: auto;
+    float: left; /* Располагаем изображение слева */
+    margin-right: 20px; /* Добавляем отступ справа для текста */
 }
 .text-about {
     width: 900px;
@@ -157,7 +160,7 @@ button:hover {
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    opacity: 0.5; /* ������������ ����������� */
+    opacity: 0.5; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 }
 .player-imag-dima {
     height: 400px;
