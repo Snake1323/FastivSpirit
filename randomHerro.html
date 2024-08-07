@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,16 +8,20 @@
 </head>
 <body>
     <div class="main-section">
-
-    </div>
-    <div class="news-select">
-        <h1>Тренировки команды</h1>
+        <div class="randomHeroSection">
+            <p>Нажмите кнопку ниже, чтобы получить случайного героя!</p>
+            <button type="button" onclick="getHero()">Случайный герой</button>
+            <div id="heroWrapper" style="display: none;">
+                <p id="heroName"></p>
+            </div>
+        </div>            
     </div>
     <div class="button-container">
         <button onclick="navigateTo('news')">Новости</button>
         <button onclick="navigateTo('roster')">Состав</button>
         <button onclick="navigateTo('about')">О нас</button>
         <button onclick="navigateTo('index')">На главную</button>
+        <button onclick="navigateTo('randomHerro')">Рандом Героев</button>
     </div>
     <script src="script.js"></script>
 </body>
