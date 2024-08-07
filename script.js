@@ -1,18 +1,18 @@
 function showDescription(playerId) {
-    // Õ‡ÈÚË ‚ÒÂ ÓÔËÒ‡ÌËˇ Ë„ÓÍÓ‚
+    // –ù–∞–π—Ç–∏ –≤—Å–µ –æ–ø–∏—Å–∞–Ω–∏—è –∏–≥—Ä–æ–∫–æ–≤
     var allDescriptions = document.querySelectorAll('.player-description');
     
-    // «‡Í˚Ú¸ ‚ÒÂ ÓÔËÒ‡ÌËˇ
+    // –ó–∞–∫—Ä—ã—Ç—å –≤—Å–µ –æ–ø–∏—Å–∞–Ω–∏—è
     allDescriptions.forEach(function(desc) {
         if (desc.id !== playerId) {
             desc.style.display = 'none';
         }
     });
 
-    // Õ‡ÈÚË ÓÔËÒ‡ÌËÂ ‰Îˇ ‚˚·‡ÌÌÓ„Ó Ë„ÓÍ‡
+    // –ù–∞–π—Ç–∏ –æ–ø–∏—Å–∞–Ω–∏–µ –¥–ª—è –≤—ã–±—Ä–∞–Ω–Ω–æ–≥–æ –∏–≥—Ä–æ–∫–∞
     var description = document.getElementById(playerId);
     
-    // œÂÂÍÎ˛˜ËÚ¸ ÓÚÓ·‡ÊÂÌËÂ ÓÔËÒ‡ÌËˇ ‚˚·‡ÌÌÓ„Ó Ë„ÓÍ‡
+    // –ü–µ—Ä–µ–∫–ª—é—á–∏—Ç—å –æ—Ç–æ–±—Ä–∞–∂–µ–Ω–∏–µ –æ–ø–∏—Å–∞–Ω–∏—è –≤—ã–±—Ä–∞–Ω–Ω–æ–≥–æ –∏–≥—Ä–æ–∫–∞
     if (description.style.display === 'block') {
         description.style.display = 'none';
     } else {
@@ -22,4 +22,34 @@ function showDescription(playerId) {
 
 function navigateTo(page) {
     window.location.href = page + '.html';
+}
+async function loadHeroList() {
+    try {
+        const response = await fetch('heroes/heroes.txt');
+        if (!response.ok) {
+            throw new Error(`–û—à–∏–±–∫–∞ –∑–∞–≥—Ä—É–∑–∫–∏ –≥–µ—Ä–æ–µ–≤: ${response.status}`);
+        }
+        const text = await response.text();
+        const heroNames = text.trim().split('\n');
+
+        // –í–æ–∑–≤—Ä–∞—â–∞–µ–º –º–∞—Å—Å–∏–≤ –∏–º–µ–Ω –≥–µ—Ä–æ–µ–≤
+        return heroNames.map(name => name.trim());
+    } catch (error) {
+        console.error('–û—à–∏–±–∫–∞ –ø–æ–ª—É—á–µ–Ω–∏—è —Å–ø–∏—Å–∫–∞ –≥–µ—Ä–æ–µ–≤:', error);
+        return [];
+    }
+}
+
+async function getHero() {
+    if (!sessionStorage.herolist) {
+        const heroes = await loadHeroList();
+        sessionStorage.herolist = JSON.stringify(heroes);
+    }
+
+    const heroes = JSON.parse(sessionStorage.herolist);
+    const randomIndex = Math.floor(Math.random() * heroes.length);
+    const selectedHero = heroes[randomIndex];
+
+    document.getElementById("heroName").textContent = selectedHero;
+    document.getElementById("heroWrapper").style.display = "block";
 }
