@@ -131,14 +131,14 @@ button:hover {
     text-align: left;
     background: #111;
     color: #fff;
-    overflow: hidden; /* Добавляем, чтобы изображение не выходило за рамки */
+    overflow: hidden; /* Р”РѕР±Р°РІР»СЏРµРј, С‡С‚РѕР±С‹ РёР·РѕР±СЂР°Р¶РµРЅРёРµ РЅРµ РІС‹С…РѕРґРёР»Рѕ Р·Р° СЂР°РјРєРё */
 }
 
 .player-imag, .player-imag-dima {
-    width: 300px; /* Уменьшаем размер изображения */
+    width: 300px; /* РЈРјРµРЅСЊС€Р°РµРј СЂР°Р·РјРµСЂ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ */
     height: auto;
-    float: left; /* Располагаем изображение слева */
-    margin-right: 20px; /* Добавляем отступ справа для текста */
+    float: left; /* Р Р°СЃРїРѕР»Р°РіР°РµРј РёР·РѕР±СЂР°Р¶РµРЅРёРµ СЃР»РµРІР° */
+    margin-right: 20px; /* Р”РѕР±Р°РІР»СЏРµРј РѕС‚СЃС‚СѓРї СЃРїСЂР°РІР° РґР»СЏ С‚РµРєСЃС‚Р° */
 }
 .text-about {
     width: 900px;
@@ -160,7 +160,7 @@ button:hover {
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    opacity: 0.5; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    opacity: 0.5; /* РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… */
 }
 .player-imag-dima {
     height: 400px;
@@ -187,4 +187,18 @@ button:hover {
 
 .news-content {
     flex: 1;
+}
+.randomHeroSection {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#heroWrapper {
+    margin-top: 20px;
+}
+
+#heroName {
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
 }
