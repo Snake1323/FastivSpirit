@@ -193,9 +193,13 @@ button:hover {
     margin-top: 20px;
 }
 
-#heroWrapper {
-    margin-top: 20px;
+#heroWrapper img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #fff;
+    border-radius: 5px;
 }
+
 
 #heroName {
     font-size: 2em;
