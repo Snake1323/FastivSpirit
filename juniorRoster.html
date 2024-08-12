@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior состав - Fastiv Spirit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-section">
+        <ul class="player-list">
+            <li>
+                <span class="player-name" onclick="showDescription('Artem-small')">FIrepillar</span>
+                <div id="Artem-small" class="player-description">
+                    <img class="player-imag" src="img/Artem-small.jpg" alt="">
+                    <p><strong>Имя:</strong> Артем</p>
+                    <p><strong>Возраст:</strong> 14</p>
+                    <p><strong>Роль:</strong> Мид Харда</p>
+                    <p><strong>Родной город:</strong> Фастов</p>
+                    <p><strong>Любимая еда:</strong> Карбанаро и лобстер</p>
+                    <p><strong>Интересный факт:</strong> Малий который нен определился с ролью</p>
+                    <p><strong>Любимые персонажи:</strong> Shtorm Spirit, Ember Spirit, Wraith King, Lifestealer</p>
+                </div>
+            </li>
+            <li>
+                <span class="player-name" onclick="showDescription('Pampers')">Pampers</span>
+                <div id="Pampers" class="player-description">
+                    <img class="player-imag" src="img/Andrey.jpg" alt="">
+                    <p><strong>Имя:</strong> Андрей</p>
+                    <p><strong>Возраст:</strong> 17</p>
+                    <p><strong>Роль:</strong> 3 pos</p>
+                    <p><strong>Родной город:</strong> Фастов</p>
+                    <p><strong>Любимая еда:</strong> Баварские колбаски</p>
+                    <p><strong>Интересный факт:</strong> Криворукий</p>
+                    <p><strong>Любимые персонажи:</strong> Ursa, Outworld Destroyer</p>
+                </div>
+            </li>
+            <!-- Другие игроки junior состава -->
+        </ul>
+        <img class="image-back" src="img/image.png" alt="">
+    </div>
+    <div class="button-container">
+        <button onclick="navigateTo('news')">Новости</button>
+        <button onclick="navigateTo('roster')">Состав</button>
+        <button onclick="navigateTo('about')">О нас</button>
+        <button onclick="navigateTo('index')">На главную</button>
+        <button onclick="navigateTo('randomHerro')">Рандом Героев</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
