@@ -53,7 +53,7 @@ body, html {
 .left-image {
     width: 650px;
     height: 650px;
-    padding-left: 100px;
+    padding-left: 150px;
 }
 
 .text-content {
@@ -265,4 +265,15 @@ button:hover {
     animation-delay: 0.05s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+}
+.details-link {
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.details-link:hover {
+    color: #ddd;
 }
