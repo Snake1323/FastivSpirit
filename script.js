@@ -88,3 +88,6 @@ async function getHero() {
     // Показываем элемент heroWrapper
     document.getElementById("heroWrapper").style.display = "block";
 }
+function showDetails(page) {
+    window.location.href = page;
+}
