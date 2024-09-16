@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+     <!-- Кнопка гамбургер-меню -->
+     <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Скрытое меню -->
+    <div class="menu" id="menu">
+        <button onclick="navigateTo('news')">Новости</button>
+        <button onclick="navigateTo('roster')">Состав</button>
+        <button onclick="navigateTo('about')">О нас</button>
+        <button onclick="navigateTo('index')">На главную</button>
+        <button onclick="navigateTo('randomHero')">Рандом Героев</button>
+    </div>
     <div class="main-section">
         <div class="randomHeroSection">
             <p>Нажмите кнопку ниже, чтобы получить случайного героя!</p>
@@ -16,13 +31,6 @@
                 <img id="heroImage" src="" alt="Hero Image" style="width: 300px; height: auto; display: block; margin: 0 auto;">
             </div>
         </div>            
-    </div>
-    <div class="button-container">
-        <button onclick="navigateTo('news')">Новости</button>
-        <button onclick="navigateTo('roster')">Состав</button>
-        <button onclick="navigateTo('about')">О нас</button>
-        <button onclick="navigateTo('index')">На главную</button>
-        <button onclick="navigateTo('randomHerro')">Рандом Героев</button>
     </div>
     <script src="script.js"></script>
 </body>
