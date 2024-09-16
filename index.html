@@ -7,7 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Кнопка гамбургер-меню -->
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Скрытое меню -->
+    <div class="menu" id="menu">
+        <button onclick="navigateTo('news')">Новости</button>
+        <button onclick="navigateTo('roster')">Состав</button>
+        <button onclick="navigateTo('about')">О нас</button>
+        <button onclick="navigateTo('index')">На главную</button>
+        <button onclick="navigateTo('randomHero')">Рандом Героев</button>
+    </div>
+
     <div class="main-section">
+        <!-- Остальной контент остается без изменений -->
         <div class="image-container">
             <div class="border-left"></div>
             <div class="border-bottom"></div>
@@ -18,14 +35,8 @@
             <h1>FASTIV SPIRIT-ЛУЧШЕ ВСЕХ!</h1>
             <p>ИГРОКИ СЛЕДУЮЩЕГО ПОКОЛЕНИЯ! ПЯТЕРКА ЛУЧШИХ ИГРОКОВ СОВРЕМЕННОСТИ! ТРИ ПОБЕДЫ НА INTERNATIONAL ПОДРЯД! ПРИЗОВЫЕ 15.000.000$ ЗА 2 ГОДА!</p>
         </div>
-        <div class="button-container">
-            <button onclick="navigateTo('news')">Новости</button>
-            <button onclick="navigateTo('roster')">Состав</button>
-            <button onclick="navigateTo('about')">О нас</button>
-            <button onclick="navigateTo('index')">На главную</button>
-            <button onclick="navigateTo('randomHerro')">Рандом Героев</button>
-        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
