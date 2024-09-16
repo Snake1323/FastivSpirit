@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+     <!-- Кнопка гамбургер-меню -->
+     <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Скрытое меню -->
+    <div class="menu" id="menu">
+        <button onclick="navigateTo('news')">Новости</button>
+        <button onclick="navigateTo('roster')">Состав</button>
+        <button onclick="navigateTo('about')">О нас</button>
+        <button onclick="navigateTo('index')">На главную</button>
+        <button onclick="navigateTo('randomHero')">Рандом Героев</button>
+    </div>
     <div class="main-section">
         <ul class="player-list">
             <li>
@@ -38,13 +53,6 @@
             <!-- Другие игроки junior состава -->
         </ul>
         <img class="image-back" src="img/image.png" alt="">
-    </div>
-    <div class="button-container">
-        <button onclick="navigateTo('news')">Новости</button>
-        <button onclick="navigateTo('roster')">Состав</button>
-        <button onclick="navigateTo('about')">О нас</button>
-        <button onclick="navigateTo('index')">На главную</button>
-        <button onclick="navigateTo('randomHerro')">Рандом Героев</button>
     </div>
     <script src="script.js"></script>
 </body>
