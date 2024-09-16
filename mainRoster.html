@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+     <!-- Кнопка гамбургер-меню -->
+     <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Скрытое меню -->
+    <div class="menu" id="menu">
+        <button onclick="navigateTo('news')">Новости</button>
+        <button onclick="navigateTo('roster')">Состав</button>
+        <button onclick="navigateTo('about')">О нас</button>
+        <button onclick="navigateTo('index')">На главную</button>
+        <button onclick="navigateTo('randomHero')">Рандом Героев</button>
+    </div>
     <div class="main-section">
         <ul class="player-list">
             <li>
@@ -43,8 +58,8 @@
                     <p><strong>Возраст:</strong> 20 лет</p>
                     <p><strong>Роль:</strong> Offlane</p>
                     <p><strong>Родной город:</strong> Прокопьевск, Россия</p>
-                    <p><strong>Любимая еда:</strong> Українське сало, и чорний хліб і 100 грам УКРАЇНСЬКОЇ горілки</p>
-                    <p><strong>Интересный факт:</strong> Артур — с России.</p>
+                    <p><strong>Любимая еда:</strong> Борщ с мясом</p>
+                    <p><strong>Интересный факт:</strong> Артур — страстный читатель и прочитал более 100 книг по украинской истории и культуре.</p>
                     <p><strong>Любимые персонажи:</strong> Legion Comander, Axe, Dragon Knight</p>
                 </div>
             </li>
@@ -76,13 +91,6 @@
             </li>
         </ul>
         <img class="image-back" src="img/image.png" alt="">
-    </div>
-    <div class="button-container">
-        <button onclick="navigateTo('news')">Новости</button>
-        <button onclick="navigateTo('roster')">Состав</button>
-        <button onclick="navigateTo('about')">О нас</button>
-        <button onclick="navigateTo('index')">На главную</button>
-        <button onclick="navigateTo('randomHerro')">Рандом Героев</button>
     </div>
     <script src="script.js"></script>
 </body>
