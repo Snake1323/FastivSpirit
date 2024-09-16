@@ -1,18 +1,14 @@
 function showDescription(playerId) {
-    // Найти все описания игроков
     var allDescriptions = document.querySelectorAll('.player-description');
     
-    // Закрыть все описания
     allDescriptions.forEach(function(desc) {
         if (desc.id !== playerId) {
             desc.style.display = 'none';
         }
     });
 
-    // Найти описание для выбранного игрока
     var description = document.getElementById(playerId);
     
-    // Переключить отображение описания выбранного игрока
     if (description.style.display === 'block') {
         description.style.display = 'none';
     } else {
@@ -21,24 +17,9 @@ function showDescription(playerId) {
 }
 
 function navigateTo(page) {
+    console.log('Навигация на страницу: ' + page);
     window.location.href = page + '.html';
 }
-async function loadHeroList() {
-    try {
-        const response = await fetch('heroes/heroes.txt');
-        if (!response.ok) {
-            throw new Error(`Ошибка загрузки героев: ${response.status}`);
-        }
-        const text = await response.text();
-        const heroNames = text.trim().split('\n');
-
-        // Возвращаем массив имен героев
-        return heroNames.map(name => name.trim());
-    } catch (error) {
-        console.error('Ошибка получения списка героев:', error);
-        return [];
-    }
-}
 
 async function loadHeroList() {
     try {
@@ -49,7 +30,6 @@ async function loadHeroList() {
         const text = await response.text();
         const heroNames = text.trim().split('\n');
 
-        // Возвращаем массив имен героев
         return heroNames.map(name => name.trim());
     } catch (error) {
         console.error('Ошибка получения списка героев:', error);
@@ -72,22 +52,19 @@ async function getHero() {
     const randomIndex = Math.floor(Math.random() * heroes.length);
     const selectedHero = heroes[randomIndex];
 
-    // Обновляем содержимое элемента heroName
     document.getElementById("heroName").textContent = selectedHero;
 
-    // Обновляем источник изображения
     const heroImage = document.getElementById("heroImage");
-    heroImage.src = `heroes-img/${selectedHero}.jpg`; // Путь к изображению
+    heroImage.src = `heroes-img/${selectedHero}.jpg`;
     heroImage.alt = `${selectedHero} Image`;
 
-    // Добавляем обработчик ошибок для изображения
     heroImage.onerror = function() {
         console.error('Ошибка загрузки изображения для героя:', selectedHero);
     };
 
-    // Показываем элемент heroWrapper
     document.getElementById("heroWrapper").style.display = "block";
 }
+
 function showDetails(page) {
     window.location.href = page;
 }
@@ -99,14 +76,29 @@ function toggleMenu() {
     if (menu.style.display === "block") {
         menu.style.display = "none";
         hamburger.classList.remove('active');
-        hamburger.classList.remove('moved'); // Возвращаем гамбургер на исходное место
+        hamburger.classList.remove('moved');
     } else {
         menu.style.display = "block";
         hamburger.classList.add('active');
-        hamburger.classList.add('moved'); // Перемещаем гамбургер к краю меню
+        hamburger.classList.add('moved');
     }
 }
-
 function navigateTo(page) {
     console.log('Навигация на страницу: ' + page);
+    window.location.href = page + '.html';
+}
+
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger-menu');
+
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+        hamburger.classList.remove('active');
+        hamburger.classList.remove('moved');
+    } else {
+        menu.style.display = "block";
+        hamburger.classList.add('active');
+        hamburger.classList.add('moved');
+    }
 }
