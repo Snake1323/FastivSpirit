@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+     <!-- Кнопка гамбургер-меню -->
+     <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Скрытое меню -->
+    <div class="menu" id="menu">
+        <button onclick="navigateTo('news')">Новости</button>
+        <button onclick="navigateTo('roster')">Состав</button>
+        <button onclick="navigateTo('about')">О нас</button>
+        <button onclick="navigateTo('index')">На главную</button>
+        <button onclick="navigateTo('randomHero')">Рандом Героев</button>
+    </div>
     <div class="main-section">
         <div class="news-container">
             <h2>Новости команды!</h2>
@@ -40,13 +55,6 @@
                 </div>
             </div>
          </div>
-        <div class="button-container">
-            <button onclick="navigateTo('news')">Новости</button>
-            <button onclick="navigateTo('roster')">Состав</button>
-            <button onclick="navigateTo('about')">О нас</button>
-            <button onclick="navigateTo('index')">На главную</button>
-            <button onclick="navigateTo('randomHerro')">Рандом Героев</button>
-        </div>
     </div>
     <script src="script.js"></script>
 </body>
