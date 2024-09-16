@@ -91,3 +91,22 @@ async function getHero() {
 function showDetails(page) {
     window.location.href = page;
 }
+
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger-menu');
+
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+        hamburger.classList.remove('active');
+        hamburger.classList.remove('moved'); // Возвращаем гамбургер на исходное место
+    } else {
+        menu.style.display = "block";
+        hamburger.classList.add('active');
+        hamburger.classList.add('moved'); // Перемещаем гамбургер к краю меню
+    }
+}
+
+function navigateTo(page) {
+    console.log('Навигация на страницу: ' + page);
+}
