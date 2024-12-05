@@ -138,6 +138,7 @@ button:hover {
 }
 
 .player-imag, .player-imag-dima {
+    z-index: 2;
     width: 100%;
     max-width: 300px;
     height: auto;
@@ -287,7 +288,7 @@ button:hover {
     top: 20px;
     right: 20px;
     cursor: pointer;
-    z-index: 3;
+    z-index: 5;
     padding: 10px;
     border: 2px solid white;
     border-radius: 5px;
