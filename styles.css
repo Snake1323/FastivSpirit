@@ -114,6 +114,7 @@ button:hover {
 
 .player-name {
     font-size: 35px;
+    z-index: 2;
     font-weight: bold;
     cursor: pointer;
     color: white;
