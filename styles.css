@@ -1,3 +1,4 @@
+/* Основной стиль для всех устройств */
 body, html {
     height: 100%;
     margin: 0;
@@ -51,8 +52,9 @@ body, html {
 }
 
 .left-image {
-    width: 650px;
-    height: 650px;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
     padding-left: 150px;
 }
 
@@ -136,9 +138,10 @@ button:hover {
 }
 
 .player-imag, .player-imag-dima {
-    width: 300px; /* Уменьшаем размер изображения */
+    width: 100%;
+    max-width: 300px;
     height: auto;
-    float: left; /* � асполагаем изображение слева */
+    float: left; /* Располагаем изображение слева */
     margin-right: 20px; /* Добавляем отступ справа для текста */
 }
 .text-about {
@@ -147,7 +150,7 @@ button:hover {
     font-size: 19px;
     letter-spacing: 3px;
     padding-left: 200px;
-    z-index: 2;
+    z-index: 0;
 }
 .image-back {
     background-image: none;
@@ -161,11 +164,12 @@ button:hover {
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    opacity: 0.5; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    opacity: 0.5; /* Устанавливаем прозрачность изображения */
 }
 .player-imag-dima {
-    height: 400px;
-    width: 800px;
+    height: auto;
+    width: 100%;
+    max-width: 800px;
 }
 .news-container {
     width: 80%;
@@ -180,8 +184,9 @@ button:hover {
 }
 
 .news-image {
-    width: auto;
-    height: 100px;
+    width: 100%;
+    max-width: 100px;
+    height: auto;
     object-fit: cover;
     margin-right: 20px;
 }
@@ -201,18 +206,17 @@ button:hover {
     border-radius: 5px;
 }
 
-
 #heroName {
     font-size: 2em;
     font-weight: bold;
     color: #fff;
 }
 
-/* ����� ����� ��� ������ "�������� ������" � "Junior" */
+/* Стили для кнопок "Основной состав" и "Junior" */
 .main-roster-button, .junior-roster-button {
-    background-color: #000; /* ������ ���� ���� */
-    border: 2px solid #fff; /* ����� ������� */
-    color: #fff; /* ����� ���� ������ */
+    background-color: #000; /* Черный цвет фона */
+    border: 2px solid #fff; /* Белая рамка */
+    color: #fff; /* Белый цвет текста */
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -227,8 +231,8 @@ button:hover {
 }
 
 .main-roster-button:hover, .junior-roster-button:hover {
-    background-color: #fff; /* ����� ���� ���� ��� ��������� */
-    color: #000; /* ������ ���� ������ ��� ��������� */
+    background-color: #fff; /* Белый цвет фона при наведении */
+    color: #000; /* Черный цвет текста при наведении */
 }
 
 @keyframes slideme {
@@ -277,7 +281,7 @@ button:hover {
 .details-link:hover {
     color: #ddd;
 }
-/* ����� ��� ���������-���� */
+/* Стили для гамбургер-меню */
 .hamburger-menu {
     position: absolute;
     top: 20px;
@@ -287,7 +291,7 @@ button:hover {
     padding: 10px;
     border: 2px solid white;
     border-radius: 5px;
-    transition: border-color 0.3s ease, right 0.5s ease; /* ��������� �������� ����������� �� ������� ���� */
+    transition: border-color 0.3s ease, right 0.5s ease; /* Добавляем анимацию для перемещения */
 }
 
 .hamburger-menu:hover {
@@ -302,12 +306,12 @@ button:hover {
     transition: 0.4s;
 }
 
-/* �������� ��� ����������� ���������-���� */
+/* Стили для перемещения гамбургер-меню */
 .hamburger-menu.moved {
-    right: 270px; /* �������� ������ � ���� ���� */
+    right: 270px; /* Перемещаем меню вправо */
 }
 
-/* ��� �������� ��������� ���������-���� */
+/* Стили для активного гамбургер-меню */
 .hamburger-menu.active .bar:nth-child(1) {
     transform: rotate(-45deg) translate(-9px, 6px);
 }
@@ -320,9 +324,9 @@ button:hover {
     transform: rotate(45deg) translate(-9px, -6px);
 }
 
-/* ������� ���� */
+/* Стили для бокового меню */
 .menu {
-    display: none; /* �� ��������� ������ */
+    display: none; /* Скрываем меню по умолчанию */
     position: absolute;
     top: 0;
     right: 0;
@@ -354,4 +358,232 @@ button:hover {
     background-color: #ddd;
     color: #000;
     border-color: #ddd;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 767px) {
+    /* Стили для мобильных устройств */
+    .left-image {
+        padding-left: 0;
+    }
+
+    .text-content {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+
+    .text-about {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .player-imag, .player-imag-dima {
+        margin-right: 0;
+    }
+
+    .news-image {
+        margin-right: 0;
+    }
+
+    .news-item {
+        flex-direction: column;
+    }
+
+    .news-content {
+        width: 100%;
+    }
+
+    .hamburger-menu {
+        right: 10px;
+    }
+
+    .menu {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Стили для планшетов */
+    .left-image {
+        padding-left: 50px;
+    }
+
+    .text-content {
+        width: 50%;
+        padding-left: 50px;
+        font-size: 18px;
+        letter-spacing: 4px;
+    }
+
+    .text-about {
+        width: 50%;
+        padding-left: 50px;
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+
+    .player-imag, .player-imag-dima {
+        margin-right: 20px;
+    }
+
+    .news-image {
+        margin-right: 20px;
+    }
+
+    .news-item {
+        flex-direction: row;
+    }
+
+    .news-content {
+        width: 50%;
+    }
+
+    .hamburger-menu {
+        right: 20px;
+    }
+
+    .menu {
+        width: 250px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    /* Стили для нетбуков */
+    .left-image {
+        padding-left: 100px;
+    }
+
+    .text-content {
+        width: 60%;
+        padding-left: 100px;
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+
+    .text-about {
+        width: 60%;
+        padding-left: 100px;
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .player-imag, .player-imag-dima {
+        margin-right: 20px;
+    }
+
+    .news-image {
+        margin-right: 20px;
+    }
+
+    .news-item {
+        flex-direction: row;
+    }
+
+    .news-content {
+        width: 60%;
+    }
+
+    .hamburger-menu {
+        right: 30px;
+    }
+
+    .menu {
+        width: 250px;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) {
+    /* Стили для мониторов низкого класса */
+    .left-image {
+        padding-left: 150px;
+    }
+
+    .text-content {
+        width: 70%;
+        padding-left: 150px;
+        font-size: 22px;
+        letter-spacing: 6px;
+    }
+
+    .text-about {
+        width: 70%;
+        padding-left: 150px;
+        font-size: 22px;
+        letter-spacing: 5px;
+    }
+
+    .player-imag, .player-imag-dima {
+        margin-right: 20px;
+    }
+
+    .news-image {
+        margin-right: 20px;
+    }
+
+    .news-item {
+        flex-direction: row;
+    }
+
+    .news-content {
+        width: 70%;
+    }
+
+    .hamburger-menu {
+        right: 40px;
+    }
+
+    .menu {
+        width: 250px;
+    }
+}
+
+@media (min-width: 1920px) {
+    /* Стили для мониторов full-hd */
+    .left-image {
+        padding-left: 200px;
+    }
+
+    .text-content {
+        width: 80%;
+        padding-left: 200px;
+        font-size: 24px;
+        letter-spacing: 7px;
+    }
+
+    .text-about {
+        width: 80%;
+        padding-left: 200px;
+        font-size: 24px;
+        letter-spacing: 6px;
+    }
+
+    .player-imag, .player-imag-dima {
+        margin-right: 20px;
+    }
+
+    .news-image {
+        margin-right: 20px;
+    }
+
+    .news-item {
+        flex-direction: row;
+    }
+
+    .news-content {
+        width: 80%;
+    }
+
+    .hamburger-menu {
+        right: 50px;
+    }
+
+    .menu {
+        width: 250px;
+    }
 }
