@@ -335,7 +335,7 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.9);
     width: 250px;
     height: 100vh;
-    z-index: 6;
+    z-index: 4;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -408,6 +408,12 @@ button:hover {
     .menu {
         width: 100%;
     }
+
+    /* Уменьшаем размер кнопок на мобильных устройствах */
+    .main-roster-button, .junior-roster-button {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -452,6 +458,12 @@ button:hover {
 
     .menu {
         width: 250px;
+    }
+
+    /* Уменьшаем размер кнопок на планшетах */
+    .main-roster-button, .junior-roster-button {
+        padding: 12px 24px;
+        font-size: 20px;
     }
 }
 
@@ -498,6 +510,12 @@ button:hover {
     .menu {
         width: 250px;
     }
+
+    /* Уменьшаем размер кнопок на нетбуках */
+    .main-roster-button, .junior-roster-button {
+        padding: 14px 28px;
+        font-size: 22px;
+    }
 }
 
 @media (min-width: 1280px) and (max-width: 1919px) {
@@ -543,6 +561,12 @@ button:hover {
     .menu {
         width: 250px;
     }
+
+    /* Уменьшаем размер кнопок на мониторах низкого класса */
+    .main-roster-button, .junior-roster-button {
+        padding: 15px 30px;
+        font-size: 23px;
+    }
 }
 
 @media (min-width: 1920px) {
@@ -587,5 +611,11 @@ button:hover {
 
     .menu {
         width: 250px;
+    }
+
+    /* Уменьшаем размер кнопок на мониторах full-hd */
+    .main-roster-button, .junior-roster-button {
+        padding: 15px 32px;
+        font-size: 23px;
     }
 }
