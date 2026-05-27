@@ -1,0 +1,155 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новини — Fastiv Spirit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="page-wrapper">
+
+        <nav class="nav-bar">
+            <div class="nav-logo" onclick="navigateTo('index')">
+                <img class="nav-logo-img" src="img/image.png" alt="Fastiv Spirit">
+                <span class="nav-logo-text">Fastiv Spirit</span>
+            </div>
+            <div class="nav-links">
+                <a class="nav-link active" onclick="navigateTo('news')">Новини</a>
+                <a class="nav-link" onclick="navigateTo('roster')">Склад</a>
+                <a class="nav-link" onclick="navigateTo('about')">Про нас</a>
+                <a class="nav-link" onclick="navigateTo('randomHerro')">Герої</a>
+            </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <button onclick="navigateTo('index')">Головна</button>
+            <button onclick="navigateTo('news')">Новини</button>
+            <button onclick="navigateTo('roster')">Склад</button>
+            <button onclick="navigateTo('about')">Про нас</button>
+            <button onclick="navigateTo('randomHerro')">Герої</button>
+        </div>
+
+        <div class="page-section">
+            <h1 class="page-title">Новини команди</h1>
+
+            <div class="news-page-container">
+                <div class="news-page-item">
+                    <img src="img/cup.png" alt="The International" class="news-page-img">
+                    <div class="news-page-content">
+                        <p>Гравці команди Fastiv Spirit виграли чемпіонат The International!</p>
+                        <div class="news-page-date">31.08.2024</div>
+                        <button class="news-page-link" onclick="navigateTo('detailsPage')">Детальніше</button>
+                    </div>
+                </div>
+                <div class="news-page-item">
+                    <img src="img/LpDima.png" alt="LP" class="news-page-img">
+                    <div class="news-page-content">
+                        <p>Дмитро, наш гравець Fastiv Spirit, отримав LP 03.08.24. Після нещодавньої гри служба Патруля визнала його винним. Всією командою Fastiv Spirit вдалося відмити LP, яке тривало 11 ігор.</p>
+                        <div class="news-page-date">09.08.2024</div>
+                    </div>
+                </div>
+                <div class="news-page-item">
+                    <img src="img/quarter-finals.jpg" alt="1/4 фіналу" class="news-page-img">
+                    <div class="news-page-content">
+                        <p>Команда пройшла в 1/4 фіналу світового турніру The International 2024!</p>
+                        <div class="news-page-date">29.07.2024</div>
+                    </div>
+                </div>
+                <div class="news-page-item">
+                    <img src="img/team-created.jpg" alt="Створення команди" class="news-page-img">
+                    <div class="news-page-content">
+                        <p>Команда створена!</p>
+                        <div class="news-page-date">21.10.2023</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <p>© 2024 Fastiv Spirit. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости - Fastiv Spirit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!-- Кнопка гамбургер-меню -->
+     <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Скрытое меню -->
+    <div class="menu" id="menu">
+        <button onclick="navigateTo('news')">Новости</button>
+        <button onclick="navigateTo('roster')">Состав</button>
+        <button onclick="navigateTo('about')">О нас</button>
+        <button onclick="navigateTo('index')">На главную</button>
+        <button onclick="navigateTo('randomHerro')">Рандом Героев</button>
+    </div>
+    <div class="main-section">
+        <div class="news-container">
+            <h2>Новости команды!</h2>
+            <div class="news-item">
+                <div class="news-content">
+                    <p>Наши люди создали официальний тик ток акаунт FastivSpirit_official.</p>
+                    <strong>24.10.2024</strong>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="img/cup.png" alt="Победа на турнире" class="news-image">
+                <div class="news-content">
+                    <a href="#" class="details-link" onclick="showDetails('detailsPage.html')">Подробности</a>
+                    <p>Игроки команды Fastiv Spirit вииграла чемпионат the INTERNATIONAL</p>
+                    <strong>31.08.2024</strong>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="img/LpDima.png" alt="Команда создана" class="news-image">
+                <div class="news-content">
+                    <p>Дмитрий наш игрок Fastiv Spirit получил ЛП 03.08.24. После недавней игры служба Патруля признала его вину в нарушении. Всей командой Fastiv Spirit получилось отмить ЛП которое длилось 11 игр.</p>
+                    <strong>09.08.2024</strong>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="img/quarter-finals.jpg" alt="1/4 финала" class="news-image">
+                <div class="news-content">
+                    <p>Команда прошла в 1/4 финала мирового турнира The International 2024!</p>
+                    <strong>29.07.2024</strong>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="img/team-created.jpg" alt="Команда создана" class="news-image">
+                <div class="news-content">
+                    <p>Команда создана!</p>
+                    <strong>21.10.2023</strong>
+                </div>
+            </div>
+         </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+>>>>>>> 4cd796a1e1cff1d7410ed31eba7ace8361d810a8

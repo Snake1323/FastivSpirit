@@ -1,0 +1,226 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior — Fastiv Spirit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="page-wrapper">
+
+        <nav class="nav-bar">
+            <div class="nav-logo" onclick="navigateTo('index')">
+                <img class="nav-logo-img" src="img/image.png" alt="Fastiv Spirit">
+                <span class="nav-logo-text">Fastiv Spirit</span>
+            </div>
+            <div class="nav-links">
+                <a class="nav-link" onclick="navigateTo('news')">Новини</a>
+                <a class="nav-link active" onclick="navigateTo('roster')">Склад</a>
+                <a class="nav-link" onclick="navigateTo('about')">Про нас</a>
+                <a class="nav-link" onclick="navigateTo('randomHerro')">Герої</a>
+            </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <button onclick="navigateTo('index')">Головна</button>
+            <button onclick="navigateTo('news')">Новини</button>
+            <button onclick="navigateTo('roster')">Склад</button>
+            <button onclick="navigateTo('about')">Про нас</button>
+            <button onclick="navigateTo('randomHerro')">Герої</button>
+        </div>
+
+        <!-- ROSTER BANNER -->
+        <section class="roster-banner">
+            <div class="roster-banner-overlay"></div>
+            <div class="roster-banner-content">
+                <div class="section-tag">Team Jr</div>
+                <h1 class="roster-banner-title">Junior склад</h1>
+                <p class="roster-banner-sub">Молоді таланти Fastiv Spirit</p>
+            </div>
+        </section>
+
+        <!-- ROSTER TOGGLE -->
+        <div class="roster-toggle">
+            <button class="roster-toggle-btn" onclick="navigateTo('mainRoster')">Основний склад</button>
+            <button class="roster-toggle-btn active" onclick="navigateTo('juniorRoster')">Junior</button>
+        </div>
+
+        <!-- PLAYER CARDS FIXED GRID -->
+        <section class="roster-players">
+            <div class="roster-players-grid">
+                <div class="roster-player-card" onclick="showDescription('Artem-small')">
+                    <div class="roster-player-img-wrap">
+                        <img class="roster-player-img" src="img/Artem-small.jpg" alt="Firepillar">
+                    </div>
+                    <div class="roster-player-info">
+                        <span class="roster-player-number">01</span>
+                        <h2 class="roster-player-nick">Firepillar</h2>
+                        <p class="roster-player-role">Мід Харда</p>
+                        <p class="roster-player-name">Артем, 14 років</p>
+                        <p class="roster-player-location">Фастів</p>
+                    </div>
+                    <div id="Artem-small" class="roster-player-detail">
+                        <p><strong>Улюблена їжа:</strong> Карбонара та лобстер</p>
+                        <p><strong>Факт:</strong> Малий, який не визначився з роллю</p>
+                        <p><strong>Улюблені герої:</strong> Storm Spirit, Ember Spirit, Wraith King, Lifestealer</p>
+                    </div>
+                </div>
+                <div class="roster-player-card" onclick="showDescription('Pampers')">
+                    <div class="roster-player-img-wrap">
+                        <img class="roster-player-img" src="img/Andrey.jpg" alt="Pampers">
+                    </div>
+                    <div class="roster-player-info">
+                        <span class="roster-player-number">02</span>
+                        <h2 class="roster-player-nick">Pampers</h2>
+                        <p class="roster-player-role">5 pos</p>
+                        <p class="roster-player-name">Андрій, 17 років</p>
+                        <p class="roster-player-location">Фастів</p>
+                    </div>
+                    <div id="Pampers" class="roster-player-detail">
+                        <p><strong>Улюблена їжа:</strong> Баварські ковбаски</p>
+                        <p><strong>Факт:</strong> Криворукий</p>
+                        <p><strong>Улюблені герої:</strong> Oracle</p>
+                    </div>
+                </div>
+                <div class="roster-player-card" onclick="showDescription('Matvey')">
+                    <div class="roster-player-img-wrap">
+                        <img class="roster-player-img" src="img/Matvey.jpg" alt="Matvey">
+                    </div>
+                    <div class="roster-player-info">
+                        <span class="roster-player-number">03</span>
+                        <h2 class="roster-player-nick">...</h2>
+                        <p class="roster-player-role">3 pos</p>
+                        <p class="roster-player-name">Матвій, 18 років</p>
+                        <p class="roster-player-location">Фастів</p>
+                    </div>
+                    <div id="Matvey" class="roster-player-detail">
+                        <p><strong>Улюблена їжа:</strong> Вареники</p>
+                        <p><strong>Факт:</strong> Перший гравець, який апнув старожила</p>
+                        <p><strong>Улюблені герої:</strong> Earthshaker, Slardar, Axe</p>
+                    </div>
+                </div>
+                <div class="roster-player-card" onclick="showDescription('Gleb')">
+                    <div class="roster-player-img-wrap">
+                        <img class="roster-player-img" src="img/Gleb.jpg" alt="Gleb">
+                    </div>
+                    <div class="roster-player-info">
+                        <span class="roster-player-number">04</span>
+                        <h2 class="roster-player-nick">anonymousembersecretswaggagent</h2>
+                        <p class="roster-player-role">5 pos / 2 pos</p>
+                        <p class="roster-player-name">Гліб, 19 років</p>
+                        <p class="roster-player-location">Фастів</p>
+                    </div>
+                    <div id="Gleb" class="roster-player-detail">
+                        <p><strong>Улюблена їжа:</strong> Водка</p>
+                        <p><strong>Факт:</strong> Син Міпошки</p>
+                        <p><strong>Улюблені герої:</strong> Tusk, Marci, Invoker</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p>© 2024 Fastiv Spirit. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior состав - Fastiv Spirit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!-- Кнопка гамбургер-меню -->
+     <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Скрытое меню -->
+    <div class="menu" id="menu">
+        <button onclick="navigateTo('news')">Новости</button>
+        <button onclick="navigateTo('roster')">Состав</button>
+        <button onclick="navigateTo('about')">О нас</button>
+        <button onclick="navigateTo('index')">На главную</button>
+        <button onclick="navigateTo('randomHerro')">Рандом Героев</button>
+    </div>
+    <div class="main-section">
+        <ul class="player-list">
+            <li>
+                <span class="player-name" onclick="showDescription('Artem-small')">FIrepillar</span>
+                <div id="Artem-small" class="player-description">
+                    <img class="player-imag" src="img/Artem-small.jpg" alt="">
+                    <p><strong>Имя:</strong> Артем</p>
+                    <p><strong>Возраст:</strong> 14</p>
+                    <p><strong>Роль:</strong> Мид Харда</p>
+                    <p><strong>Родной город:</strong> Фастов</p>
+                    <p><strong>Любимая еда:</strong> Карбанаро и лобстер</p>
+                    <p><strong>Интересный факт:</strong> Малий который нен определился с ролью</p>
+                    <p><strong>Любимые персонажи:</strong> Shtorm Spirit, Ember Spirit, Wraith King, Lifestealer</p>
+                </div>
+            </li>
+            <li>
+                <span class="player-name" onclick="showDescription('Pampers')">Pampers</span>
+                <div id="Pampers" class="player-description">
+                    <img class="player-imag" src="img/Andrey.jpg" alt="">
+                    <p><strong>Имя:</strong> Андрей</p>
+                    <p><strong>Возраст:</strong> 17</p>
+                    <p><strong>Роль:</strong> 5 pos</p>
+                    <p><strong>Родной город:</strong> Фастов</p>
+                    <p><strong>Любимая еда:</strong> Баварские колбаски</p>
+                    <p><strong>Интересный факт:</strong> Криворукий</p>
+                    <p><strong>Любимые персонажи:</strong> Oracle</p>
+                </div>
+            </li>
+            <li>
+                <span class="player-name" onclick="showDescription('Matvey')">...</span>
+                <div id="Matvey" class="player-description">
+                    <img class="player-imag" src="img/Matvey.jpg" alt="">
+                    <p><strong>Имя:</strong> Матвей</p>
+                    <p><strong>Возраст:</strong> 18</p>
+                    <p><strong>Роль:</strong> 3 pos</p>
+                    <p><strong>Родной город:</strong> Фастов</p>
+                    <p><strong>Любимая еда:</strong> Вареники</p>
+                    <p><strong>Интересный факт:</strong> Первый игрок который аптул стаража</p>
+                    <p><strong>Любимые персонажи:</strong> Earthshaker, Slardar, Axe</p>
+                </div>
+            </li>
+            <li>
+                <span class="player-name" onclick="showDescription('Gleb')">anonymous</span>
+                <div id="Gleb" class="player-description">
+                    <img class="player-imag" src="img/Gleb.jpg" alt="">
+                    <p><strong>Имя:</strong> Глеб</p>
+                    <p><strong>Возраст:</strong> 19</p>
+                    <p><strong>Роль:</strong> 5 poss/ 2 poss</p>
+                    <p><strong>Родной город:</strong> Фастов</p>
+                    <p><strong>Любимая еда:</strong> Пиво</p>
+                    <p><strong>Интересный факт:</strong> сын мипошки</p>
+                    <p><strong>Любимые персонажи:</strong> Task, Marsi, Invoker</p>
+                </div>
+            </li>
+        </ul>
+        <img class="image-back" src="img/image.png" alt="">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+>>>>>>> 4cd796a1e1cff1d7410ed31eba7ace8361d810a8

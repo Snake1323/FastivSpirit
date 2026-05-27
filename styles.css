@@ -1,0 +1,2125 @@
+<<<<<<< HEAD
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #000;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.page-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================
+   NAV / HAMBURGER
+   ============================ */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, transparent 100%);
+    transition: all 0.3s;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-logo-text {
+    font-size: 1.4em;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.nav-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.nav-link {
+    padding: 8px 18px;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.3);
+}
+
+.nav-link.active {
+    color: #fff;
+    border-color: #fff;
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 110;
+    padding: 10px;
+}
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: rgba(0,0,0,0.97);
+    z-index: 105;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu button {
+    display: block;
+    width: 80%;
+    padding: 16px;
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: transparent;
+    color: #888;
+    border: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mobile-menu button:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+/* ============================
+   HERO SECTION
+   ============================ */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 40px 60px;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 70%),
+        linear-gradient(0deg, #000 0%, transparent 30%, transparent 70%, #000 100%);
+    z-index: 1;
+}
+
+.hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.04;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+}
+
+.hero-badge-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.hero-badge {
+    padding: 6px 24px;
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.7em;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #888;
+    white-space: nowrap;
+}
+
+.hero-logo {
+    width: 60px;
+    height: auto;
+    filter: drop-shadow(0 0 30px rgba(255,255,255,0.2));
+    flex-shrink: 0;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 0 0 40px rgba(255,255,255,0.15);
+}
+
+.hero-title .highlight {
+    display: inline-block;
+    background: linear-gradient(135deg, #fff 0%, #888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    font-weight: 400;
+    color: #666;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    padding: 14px 36px;
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    transition: left 0.4s;
+}
+
+.hero-btn:hover::before {
+    left: 0;
+}
+
+.hero-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.hero-btn-outline {
+    border-color: rgba(255,255,255,0.3);
+    color: #888;
+}
+
+.hero-btn-outline:hover {
+    border-color: #fff;
+    color: #fff;
+    background: transparent;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #444;
+    font-size: 0.65em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: float 2s ease-in-out infinite;
+}
+
+.hero-scroll .line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(180deg, #444 0%, transparent 100%);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ============================
+   SECTION COMMON
+   ============================ */
+.section {
+    padding: 100px 40px;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-tag {
+    display: inline-block;
+    padding: 4px 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    font-size: 0.65em;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.section-title span {
+    color: #666;
+}
+
+/* ============================
+   ROSTER SECTION
+   ============================ */
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.player-card {
+    position: relative;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 50px 20px 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.player-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: all 0.4s;
+}
+
+.player-card:hover {
+    border-color: rgba(255,255,255,0.25);
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.04);
+}
+
+.player-card:hover::before {
+    opacity: 1;
+}
+
+.player-card:hover::after {
+    width: 80%;
+    left: 10%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+}
+
+.player-card-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 18px;
+    border: 2px solid rgba(255,255,255,0.12);
+    transition: all 0.4s;
+}
+
+.player-card:hover .player-card-avatar {
+    border-color: rgba(255,255,255,0.4);
+    transform: scale(1.05);
+}
+
+.player-card-nick {
+    font-size: 1.15em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.player-card-role {
+    font-size: 0.8em;
+    color: #555;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+    margin-top: 6px;
+}
+
+.player-card .card-number {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: 3em;
+    font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+/* ============================
+   ACHIEVEMENTS
+   ============================ */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.achievement-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.achievement-card:hover {
+    border-color: rgba(255,255,255,0.2);
+}
+
+.achievement-icon {
+    font-size: 2.5em;
+    margin-bottom: 12px;
+    opacity: 0.4;
+}
+
+.achievement-number {
+    font-size: 2.5em;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.achievement-label {
+    font-size: 0.75em;
+    color: #555;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* ============================
+   NEWS SECTION
+   ============================ */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.news-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+    transition: all 0.4s;
+}
+
+.news-card:hover {
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-4px);
+}
+
+.news-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.news-card:hover .news-card-img {
+    opacity: 1;
+}
+
+.news-card-body {
+    padding: 24px;
+}
+
+.news-card-date {
+    font-size: 0.7em;
+    color: #444;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.news-card-title {
+    font-size: 1em;
+    font-weight: 700;
+    color: #ddd;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.news-card-link {
+    font-size: 0.75em;
+    font-weight: 600;
+    color: #888;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    display: inline-block;
+}
+
+.news-card-link:hover {
+    color: #fff;
+}
+
+.news-card-link::after {
+    content: ' →';
+}
+
+/* ============================
+   PAGE DEFAULT
+   ============================ */
+.page-section {
+    min-height: 100vh;
+    padding: 120px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ============================
+   ROSTER BANNER
+   ============================ */
+.roster-banner {
+    position: relative;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 40px 60px;
+    overflow: hidden;
+}
+
+.roster-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 70%),
+        linear-gradient(0deg, #000 0%, transparent 40%, transparent 60%, #000 100%);
+    z-index: 1;
+}
+
+.roster-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.03;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.roster-banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.roster-banner-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-top: 16px;
+    margin-bottom: 20px;
+}
+
+.roster-banner-sub {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    color: #666;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* Roster toggle */
+.roster-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 40px 40px;
+}
+
+.roster-toggle-btn {
+    padding: 12px 32px;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: transparent;
+    color: #555;
+    border: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.roster-toggle-btn:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.3);
+}
+
+.roster-toggle-btn.active {
+    color: #fff;
+    border-color: #fff;
+}
+
+/* Roster player cards grid */
+.roster-players {
+    padding: 0 40px 100px;
+}
+
+.roster-players-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.roster-player-card {
+    position: relative;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+
+.roster-player-card:hover {
+    border-color: rgba(255,255,255,0.2);
+}
+
+.roster-player-card.expanded {
+    border-color: rgba(255,255,255,0.3);
+}
+
+.roster-player-card.expanded .roster-player-img {
+    transform: scale(1.05);
+}
+
+.roster-player-img-wrap {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+}
+
+.roster-player-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+    opacity: 0.85;
+}
+
+.roster-player-img-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+}
+
+.roster-player-info {
+    padding: 20px 24px;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.roster-player-number {
+    position: absolute;
+    top: -50px;
+    right: 16px;
+    font-size: 4em;
+    font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    letter-spacing: -4px;
+}
+
+.roster-player-nick {
+    font-size: 1.4em;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.roster-player-role {
+    font-size: 0.8em;
+    color: #777;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.roster-player-name {
+    font-size: 0.85em;
+    color: #555;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.roster-player-location {
+    font-size: 0.75em;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+.roster-player-detail {
+    display: none;
+    padding: 0 24px 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 16px;
+    margin-top: auto;
+}
+
+.roster-player-detail.open {
+    display: block;
+    animation: fadeSlide 0.3s ease;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.roster-player-detail p {
+    font-size: 0.85em;
+    color: #888;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.roster-player-detail p strong {
+    color: #ccc;
+    font-weight: 600;
+}
+
+/* ============================
+   LEGACY PLAYER LIST (old roster pages)
+   ============================ */
+.player-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 700px;
+}
+
+.player-list-item {
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.01);
+    transition: all 0.3s;
+}
+
+.player-list-item:hover {
+    border-color: rgba(255,255,255,0.15);
+}
+
+.player-name-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 18px 24px;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ccc;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+    text-align: left;
+}
+
+.player-name-btn:hover {
+    color: #fff;
+}
+
+.player-name-btn .arrow {
+    font-size: 0.8em;
+    opacity: 0.3;
+    transition: transform 0.3s;
+}
+
+.player-name-btn.open .arrow {
+    transform: rotate(180deg);
+}
+
+.player-description {
+    display: none;
+    padding: 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.player-description.open {
+    display: block;
+}
+
+.player-desc-inner {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.player-desc-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.1);
+    flex-shrink: 0;
+}
+
+.player-desc-info {
+    flex: 1;
+}
+
+.player-desc-info p {
+    font-size: 0.85em;
+    color: #888;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+.player-desc-info p strong {
+    color: #ccc;
+    font-weight: 600;
+}
+
+.image-back {
+    display: none;
+}
+
+/* ============================
+   ABOUT PAGE
+   ============================ */
+
+/* About Banner */
+.about-banner {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 40px 80px;
+    overflow: hidden;
+}
+
+.about-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 70%),
+        linear-gradient(0deg, #000 0%, transparent 40%, transparent 60%, #000 100%);
+    z-index: 1;
+}
+
+.about-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.03;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.about-banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.about-banner-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-top: 16px;
+    margin-bottom: 20px;
+}
+
+.about-banner-sub {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    color: #666;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* About Stats */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+    gap: 0;
+}
+
+.about-stat-item {
+    text-align: center;
+    padding: 40px 20px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-right: none;
+    transition: all 0.3s;
+}
+
+.about-stat-item:last-child {
+    border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+.about-stat-item:hover {
+    background: rgba(255,255,255,0.03);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.about-stat-number {
+    font-size: 2.5em;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.about-stat-label {
+    font-size: 0.75em;
+    color: #555;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* About Story */
+.about-story {
+    padding: 80px 40px 100px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-story-content {
+    text-align: center;
+}
+
+.about-story-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.about-story-title span {
+    color: #666;
+}
+
+.about-story-content p {
+    font-size: 1.05em;
+    line-height: 1.9;
+    color: #888;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+/* About Values */
+.about-values {
+    padding: 0 40px 100px;
+}
+
+.about-values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-value-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 50px 28px;
+    text-align: center;
+    transition: all 0.4s;
+}
+
+.about-value-card:hover {
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.04);
+}
+
+.about-value-icon {
+    font-size: 2.5em;
+    margin-bottom: 16px;
+    opacity: 0.6;
+}
+
+.about-value-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: #eee;
+}
+
+.about-value-text {
+    font-size: 0.85em;
+    color: #666;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+/* ============================
+   RANDOM HERO PAGE
+   ============================ */
+.random-hero-section {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.random-hero-section p {
+    color: #666;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.random-hero-btn {
+    padding: 14px 40px;
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.random-hero-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+#heroWrapper {
+    margin-top: 40px;
+}
+
+#heroName {
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#heroImage {
+    max-width: 300px;
+    height: auto;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ============================
+   NEWS PAGE
+   ============================ */
+.news-page-container {
+    max-width: 800px;
+}
+
+.news-page-item {
+    display: flex;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    align-items: flex-start;
+}
+
+.news-page-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+.news-page-content {
+    flex: 1;
+}
+
+.news-page-content p {
+    color: #888;
+    font-size: 0.9em;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.news-page-date {
+    font-size: 0.7em;
+    color: #444;
+    letter-spacing: 2px;
+}
+
+.news-page-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.75em;
+    font-weight: 600;
+    color: #888;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.news-page-link:hover {
+    color: #fff;
+}
+
+/* ============================
+   DETAILS PAGE
+   ============================ */
+.details-content {
+    max-width: 700px;
+}
+
+.details-content h1 {
+    font-size: 1.8em;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.details-content p {
+    color: #888;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.details-content iframe {
+    max-width: 100%;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 0.75em;
+    font-weight: 600;
+    color: #888;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+.site-footer {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.site-footer p {
+    font-size: 0.7em;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    .nav-bar {
+        padding: 16px 20px;
+    }
+
+    .hero-section {
+        padding: 100px 20px 40px;
+    }
+
+    .hero-logo {
+        width: 50px;
+    }
+
+    .hero-badge-row {
+        gap: 8px;
+    }
+
+    .hero-title {
+        letter-spacing: 6px;
+    }
+
+    .hero-subtitle {
+        letter-spacing: 3px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .roster-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .player-card {
+        padding: 30px 14px 24px;
+    }
+
+    .player-card-avatar {
+        width: 90px;
+        height: 90px;
+    }
+
+    .player-card-nick {
+        font-size: 0.9em;
+    }
+
+    .player-card .card-number {
+        font-size: 2em;
+    }
+
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-section {
+        padding: 100px 20px 40px;
+    }
+
+    .player-list {
+        max-width: 100%;
+    }
+
+    .player-desc-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .news-page-item {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .roster-actions {
+        flex-direction: column;
+    }
+
+    .player-name-btn {
+        font-size: 0.85em;
+        padding: 14px 16px;
+        letter-spacing: 2px;
+    }
+
+    .roster-players {
+        padding: 0 20px 60px;
+    }
+
+    .roster-players-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .roster-player-img-wrap {
+        height: 200px;
+    }
+
+    .roster-player-nick {
+        font-size: 1.1em;
+    }
+
+    .roster-player-number {
+        font-size: 2.5em;
+        top: -40px;
+    }
+
+    .roster-toggle {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px 24px;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px 40px;
+    }
+
+    .about-stat-item {
+        border-right: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .about-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .about-story {
+        padding: 40px 20px 60px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-title {
+        font-size: 4rem;
+        letter-spacing: 8px;
+    }
+
+    .roster-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .roster-players-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .roster-player-img-wrap {
+        height: 240px;
+    }
+}
+=======
+/* Основной стиль для всех устройств */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: TT Norms, Segoe UI, Tahoma, Arial, sans-serif;
+    font-variant-ligatures: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+    border: 0;
+    margin: 0;
+    background: #000;
+    color: #fff;
+}
+
+.main-section {
+    background-color: #000;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.border-left, .border-bottom {
+    left: 159px;
+    position: absolute;
+    background-color: white;
+    width: 23px;
+}
+
+.border-left {
+    height: 85%;
+    left: 50;
+    bottom: 50px;
+}
+
+.border-bottom {
+    width: 55%;
+    height: 15px;
+    bottom: 30px;
+    height: 23px;
+}
+
+.left-image {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    padding-left: 150px;
+}
+
+.text-content {
+    width: 800px;
+    word-break: normal;
+    font-size: 19px;
+    letter-spacing: 5px;
+    padding-left: 200px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.button-container {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 2;
+}
+
+button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+.text-content-news {
+    width: 400px;
+    word-break: normal;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.player-list {
+    list-style-type: none;
+    padding: 0;
+    z-index: 2;
+}
+
+.player-name {
+    font-size: 35px;
+    z-index: 2;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 70px 20px 22px;
+    display: block;
+    width: 100%;
+    background: #333;
+    margin-bottom: 10px;
+}
+
+.player-description {
+    display: none;
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    text-align: left;
+    background: #111;
+    color: #fff;
+    overflow: hidden; /* Добавляем, чтобы изображение не выходило за рамки */
+}
+
+.player-imag, .player-imag-dima {
+    z-index: 2;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    float: left; /* Располагаем изображение слева */
+    margin-right: 20px; /* Добавляем отступ справа для текста */
+}
+.text-about {
+    width: 900px;
+    word-break: normal;
+    font-size: 19px;
+    letter-spacing: 3px;
+    padding-left: 200px;
+    z-index: 0;
+}
+.image-back {
+    background-image: none;
+    z-index: 1;
+}
+.image-back {
+    position: absolute;
+    top: 0;
+    left: 750;
+    width: 600px;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.5; /* Устанавливаем прозрачность изображения */
+}
+.player-imag-dima {
+    height: auto;
+    width: 100%;
+    max-width: 800px;
+}
+.news-container {
+    width: 80%;
+    margin: 20px auto;
+}
+.news-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+
+.news-image {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.news-content {
+    flex: 1;
+}
+.randomHeroSection {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#heroWrapper img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+#heroName {
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Стили для кнопок "Основной состав" и "Junior" */
+.main-roster-button, .junior-roster-button {
+    background-color: #000; /* Черный цвет фона */
+    border: 2px solid #fff; /* Белая рамка */
+    color: #fff; /* Белый цвет текста */
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 23px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.main-roster-button:hover, .junior-roster-button:hover {
+    background-color: #fff; /* Белый цвет фона при наведении */
+    color: #000; /* Черный цвет текста при наведении */
+}
+
+@keyframes slideme {
+    0% {
+        left: -30px;
+        margin-left: 0px;
+    }
+    30% {
+        left: 110%;
+        margin-left: 80px;
+    }
+    100% {
+        left: 110%;
+        margin-left: 80px;
+    }
+}
+
+.main-roster-button:after, .junior-roster-button:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 200px;
+    margin-left: 60px;
+    background: #fff;
+    opacity: 0.5;
+    position: absolute;
+    left: -40px;
+    top: -100px;
+    z-index: 1;
+    transform: rotate(45deg);
+    transition: all 0.1s;
+    animation-name: slideme;
+    animation-duration: 3s;
+    animation-delay: 0.05s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.details-link {
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.details-link:hover {
+    color: #ddd;
+}
+/* Стили для гамбургер-меню */
+.hamburger-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 5;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, right 0.5s ease; /* Добавляем анимацию для перемещения */
+}
+
+.hamburger-menu:hover {
+    border-color: #ddd;
+}
+
+.hamburger-menu .bar {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Стили для перемещения гамбургер-меню */
+.hamburger-menu.moved {
+    right: 270px; /* Перемещаем меню вправо */
+}
+
+/* Стили для активного гамбургер-меню */
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-9px, -6px);
+}
+
+/* Стили для бокового меню */
+.menu {
+    display: none; /* Скрываем меню по умолчанию */
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 250px;
+    height: 100vh;
+    z-index: 4;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: display 0.5s ease;
+}
+
+.menu button {
+    display: block;
+    width: 90%;
+    margin: 20px 0;
+    padding: 15px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.menu button:hover {
+    background-color: #ddd;
+    color: #000;
+    border-color: #ddd;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 767px) {
+    /* Стили для мобильных устройств */
+    .left-image {
+        padding-left: 0;
+    }
+
+    .text-content {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+
+    .text-about {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .player-imag, .player-imag-dima {
+        margin-right: 0;
+    }
+
+    .news-image {
+        margin-right: 0;
+    }
+
+    .news-item {
+        flex-direction: column;
+    }
+
+    .news-content {
+        width: 100%;
+    }
+
+    .hamburger-menu {
+        right: 10px;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    /* Уменьшаем размер кнопок на мобильных устройствах */
+    .main-roster-button, .junior-roster-button {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Стили для планшетов */
+    .left-image {
+        padding-left: 50px;
+    }
+
+    .text-content {
+        width: 50%;
+        padding-left: 50px;
+        font-size: 18px;
+        letter-spacing: 4px;
+    }
+
+    .text-about {
+        width: 50%;
+        padding-left: 50px;
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+
+    .player-imag, .player-imag-dima {
+        margin-right: 20px;
+    }
+
+    .news-image {
+        margin-right: 20px;
+    }
+
+    .news-item {
+        flex-direction: row;
+    }
+
+    .news-content {
+        width: 50%;
+    }
+
+    .hamburger-menu {
+        right: 20px;
+    }
+
+    .menu {
+        width: 250px;
+    }
+
+    /* Уменьшаем размер кнопок на планшетах */
+    .main-roster-button, .junior-roster-button {
+        padding: 12px 24px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    /* Стили для нетбуков */
+    .left-image {
+        padding-left: 100px;
+    }
+
+    .text-content {
+        width: 60%;
+        padding-left: 100px;
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+
+    .text-about {
+        width: 60%;
+        padding-left: 100px;
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .player-imag, .player-imag-dima {
+        margin-right: 20px;
+    }
+
+    .news-image {
+        margin-right: 20px;
+    }
+
+    .news-item {
+        flex-direction: row;
+    }
+
+    .news-content {
+        width: 60%;
+    }
+
+    .hamburger-menu {
+        right: 30px;
+    }
+
+    .menu {
+        width: 250px;
+    }
+
+    /* Уменьшаем размер кнопок на нетбуках */
+    .main-roster-button, .junior-roster-button {
+        padding: 14px 28px;
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) {
+    /* Стили для мониторов низкого класса */
+    .left-image {
+        padding-left: 150px;
+    }
+
+    .text-content {
+        width: 70%;
+        padding-left: 150px;
+        font-size: 22px;
+        letter-spacing: 6px;
+    }
+
+    .text-about {
+        width: 70%;
+        padding-left: 150px;
+        font-size: 22px;
+        letter-spacing: 5px;
+    }
+
+    .player-imag, .player-imag-dima {
+        margin-right: 20px;
+    }
+
+    .news-image {
+        margin-right: 20px;
+    }
+
+    .news-item {
+        flex-direction: row;
+    }
+
+    .news-content {
+        width: 70%;
+    }
+
+    .hamburger-menu {
+        right: 40px;
+    }
+
+    .menu {
+        width: 250px;
+    }
+
+    /* Уменьшаем размер кнопок на мониторах низкого класса */
+    .main-roster-button, .junior-roster-button {
+        padding: 15px 30px;
+        font-size: 23px;
+    }
+}
+
+@media (min-width: 1920px) {
+    /* Стили для мониторов full-hd */
+    .left-image {
+        padding-left: 200px;
+    }
+
+    .text-content {
+        width: 80%;
+        padding-left: 200px;
+        font-size: 24px;
+        letter-spacing: 7px;
+    }
+
+    .text-about {
+        width: 80%;
+        padding-left: 200px;
+        font-size: 24px;
+        letter-spacing: 6px;
+    }
+
+    .player-imag, .player-imag-dima {
+        margin-right: 20px;
+    }
+
+    .news-image {
+        margin-right: 20px;
+    }
+
+    .news-item {
+        flex-direction: row;
+    }
+
+    .news-content {
+        width: 80%;
+    }
+
+    .hamburger-menu {
+        right: 50px;
+    }
+
+    .menu {
+        width: 250px;
+    }
+
+    /* Уменьшаем размер кнопок на мониторах full-hd */
+    .main-roster-button, .junior-roster-button {
+        padding: 15px 32px;
+        font-size: 23px;
+    }
+}
+>>>>>>> 4cd796a1e1cff1d7410ed31eba7ace8361d810a8

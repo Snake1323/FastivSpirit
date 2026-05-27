@@ -1,0 +1,256 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основний склад — Fastiv Spirit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="page-wrapper">
+
+        <nav class="nav-bar">
+            <div class="nav-logo" onclick="navigateTo('index')">
+                <img class="nav-logo-img" src="img/image.png" alt="Fastiv Spirit">
+                <span class="nav-logo-text">Fastiv Spirit</span>
+            </div>
+            <div class="nav-links">
+                <a class="nav-link" onclick="navigateTo('news')">Новини</a>
+                <a class="nav-link active" onclick="navigateTo('roster')">Склад</a>
+                <a class="nav-link" onclick="navigateTo('about')">Про нас</a>
+                <a class="nav-link" onclick="navigateTo('randomHerro')">Герої</a>
+            </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <button onclick="navigateTo('index')">Головна</button>
+            <button onclick="navigateTo('news')">Новини</button>
+            <button onclick="navigateTo('roster')">Склад</button>
+            <button onclick="navigateTo('about')">Про нас</button>
+            <button onclick="navigateTo('randomHerro')">Герої</button>
+        </div>
+
+        <!-- ROSTER BANNER -->
+        <section class="roster-banner">
+            <div class="roster-banner-overlay"></div>
+            <div class="roster-banner-content">
+                <div class="section-tag">Team</div>
+                <h1 class="roster-banner-title">Основний склад</h1>
+                <p class="roster-banner-sub">П'ятірка найкращих гравців сучасності</p>
+            </div>
+        </section>
+
+        <!-- ROSTER TOGGLE -->
+        <div class="roster-toggle">
+            <button class="roster-toggle-btn active" onclick="navigateTo('mainRoster')">Основний склад</button>
+            <button class="roster-toggle-btn" onclick="navigateTo('juniorRoster')">Junior</button>
+        </div>
+
+        <!-- PLAYER CARDS FIXED GRID -->
+        <section class="roster-players">
+            <div class="roster-players-grid">
+                <div class="roster-player-card" onclick="showDescription('dima')">
+                    <div class="roster-player-img-wrap">
+                        <img class="roster-player-img" src="img/Dima.jpg" alt="SoulHarvester">
+                    </div>
+                    <div class="roster-player-info">
+                        <span class="roster-player-number">01</span>
+                        <h2 class="roster-player-nick">SoulHarvester</h2>
+                        <p class="roster-player-role">Mid</p>
+                        <p class="roster-player-name">Dmytro, 23 y.o.</p>
+                        <p class="roster-player-location">Fastiv, Ukraine</p>
+                    </div>
+                    <div id="dima" class="roster-player-detail">
+                        <p><strong>Favourite food:</strong> Dumplings with ketchup</p>
+                        <p><strong>Fact:</strong> First to reach 3100 MMR.</p>
+                        <p><strong>Favourite heroes:</strong> Meepo, Arc Warden, Pangolier, Kez</p>
+                    </div>
+                </div>
+                <div class="roster-player-card" onclick="showDescription('artem1')">
+                    <div class="roster-player-img-wrap">
+                        <img class="roster-player-img" src="img/Egor.jpg" alt="Xinffol">
+                    </div>
+                    <div class="roster-player-info">
+                        <span class="roster-player-number">02</span>
+                        <h2 class="roster-player-nick">Xinffol</h2>
+                        <p class="roster-player-role">Carry</p>
+                        <p class="roster-player-name">Yehor, 26 y.o.</p>
+                        <p class="roster-player-location">Fastiv, Ukraine</p>
+                    </div>
+                    <div id="artem1" class="roster-player-detail">
+                        <p><strong>Favourite food:</strong> Chicken Kyiv</p>
+                        <p><strong>Fact:</strong> Yehor loves to go for walks.</p>
+                        <p><strong>Favourite heroes:</strong> Axe, Legion Commander, Kunkka</p>
+                    </div>
+                </div>
+                <div class="roster-player-card" onclick="showDescription('Gora')">
+                    <div class="roster-player-img-wrap">
+                        <img class="roster-player-img" src="img/Gora.jpg" alt="aarrtemkk">
+                    </div>
+                    <div class="roster-player-info">
+                        <span class="roster-player-number">03</span>
+                        <h2 class="roster-player-nick">aarrtemkk</h2>
+                        <p class="roster-player-role">Offlane</p>
+                        <p class="roster-player-name">Artem Hora, 20 y.o.</p>
+                        <p class="roster-player-location">Fastiv, Ukraine</p>
+                    </div>
+                    <div id="Gora" class="roster-player-detail">
+                        <p><strong>Fact:</strong> Changes roles like gloves (no success yet).</p>
+                        <p><strong>Favourite heroes:</strong> Magnus, Magnus, Magnus</p>
+                    </div>
+                </div>
+                <div class="roster-player-card" onclick="showDescription('kirim')">
+                    <div class="roster-player-img-wrap">
+                        <img class="roster-player-img" src="img/Snake.jpg" alt="Retr0">
+                    </div>
+                    <div class="roster-player-info">
+                        <span class="roster-player-number">04</span>
+                        <h2 class="roster-player-nick">Retr0</h2>
+                        <p class="roster-player-role">Full Support</p>
+                        <p class="roster-player-name">Kirim, 22 y.o.</p>
+                        <p class="roster-player-location">Fastiv, Ukraine</p>
+                    </div>
+                    <div id="kirim" class="roster-player-detail">
+                        <p><strong>Favourite food:</strong> Shashlik with mushrooms and onion</p>
+                        <p><strong>Fact:</strong> Talented artist, his works were exhibited in a local gallery.</p>
+                        <p><strong>Favourite heroes:</strong> Oracle, Crystal Maiden, Dark Willow</p>
+                    </div>
+                </div>
+                <div class="roster-player-card" onclick="showDescription('Shika')">
+                    <div class="roster-player-img-wrap">
+                        <img class="roster-player-img" src="img/Shika.jpg" alt="Daddy">
+                    </div>
+                    <div class="roster-player-info">
+                        <span class="roster-player-number">05</span>
+                        <h2 class="roster-player-nick">Daddy</h2>
+                        <p class="roster-player-role">Soft Support</p>
+                        <p class="roster-player-name">Artem, 21 y.o.</p>
+                        <p class="roster-player-location">Fastiv, Ukraine</p>
+                    </div>
+                    <div id="Shika" class="roster-player-detail">
+                        <p><strong>Favourite food:</strong> Dumplings</p>
+                        <p><strong>Fact:</strong> Artem traded crypto.</p>
+                        <p><strong>Favourite heroes:</strong> Morphling, Shadow Fiend</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p>© 2024 Fastiv Spirit. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Состав - Fastiv Spirit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!-- Кнопка гамбургер-меню -->
+     <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Скрытое меню -->
+    <div class="menu" id="menu">
+        <button onclick="navigateTo('news')">Новости</button>
+        <button onclick="navigateTo('roster')">Состав</button>
+        <button onclick="navigateTo('about')">О нас</button>
+        <button onclick="navigateTo('index')">На главную</button>
+        <button onclick="navigateTo('randomHerro')">Рандом Героев</button>
+    </div>
+    <div class="main-section">
+        <ul class="player-list">
+           <li>
+                <span class="player-name" onclick="showDescription('dima')">SoulHarvester</span>
+                <div id="dima" class="player-description">
+                    <img class="player-imag-dima" src="img/Dima.jpg" alt="">
+                    <p><strong>Имя:</strong> Дмитрий</p>
+                    <p><strong>Возраст:</strong> 23 года</p>
+                    <p><strong>Роль:</strong> Mid</p>
+                    <p><strong>Родной город:</strong> Фастов, Украина</p>
+                    <p><strong>Любимая еда:</strong> Пельмени с кечупом</p>
+                    <p><strong>Интересный факт:</strong> Дмитрий — первый человек, который достиг 3100ммр.</p>
+                    <p><strong>Любимые персонажи:</strong> Meepo, Arc Warden, Pangolier, Kez</p>
+                </div>
+            </li>
+            <li>
+                <span class="player-name" onclick="showDescription('artem1')">Xinffol</span>
+                <div id="artem1" class="player-description">
+                    <img class="player-imag" src="img/Egor.jpg" alt="">
+                    <p><strong>Имя:</strong> Егор</p>
+                    <p><strong>Возраст:</strong> 26 лет</p>
+                    <p><strong>Роль:</strong> Carry</p>
+                    <p><strong>Родной город:</strong> Фастов, Украина</p>
+                    <p><strong>Любимая еда:</strong> Курица по-киевски</p>
+                    <p><strong>Интересный факт:</strong> Егор — очень любит гулять.</p>
+                    <p><strong>Любимые персонажи:</strong> Naga Siren, Terrorblade, Medusa</p>
+                </div>
+            </li>
+            <li>
+                <span class="player-name" onclick="showDescription('Gora')">IceWeeCrypT</span>
+                <div id="Gora" class="player-description">
+                    <img class="player-imag" src="img/Gora.jpg" alt="">
+                    <p><strong>Имя:</strong> Артем Гора</p>
+                    <p><strong>Возраст:</strong> 20 лет</p>
+                    <p><strong>Роль:</strong> Offlane</p>
+                    <p><strong>Родной город:</strong> Фастов, Украина</p>
+                    <p><strong>Любимая еда:</strong> </p>
+                    <p><strong>Интересный факт:</strong> Гора — человек который меняет ролли как перчатки (успеха пока небыло).</p>
+                    <p><strong>Любимые персонажи:</strong> Magnus, Magnus, Magnus</p>
+                </div>
+            </li>
+            <li>
+                <span class="player-name" onclick="showDescription('kirim')">Snake</span>
+                <div id="kirim" class="player-description">
+                    <img class="player-imag" src="img/Snake.jpg" alt="">
+                    <p><strong>Имя:</strong> Кирим</p>
+                    <p><strong>Возраст:</strong> 22 года</p>
+                    <p><strong>Роль:</strong> Full Support</p>
+                    <p><strong>Родной город:</strong> Фастов, Украина</p>
+                    <p><strong>Любимая еда:</strong> Шашлык с грибами и луком</p>
+                    <p><strong>Интересный факт:</strong> Кирим — талантливый художник и его работы экспонировались в местной галерее в Фастове.</p>
+                    <p><strong>Любимые персонажи:</strong> Oracle, Tinker, Clockwerk</p>
+                </div>
+            </li>
+            <li>
+                <span class="player-name" onclick="showDescription('Shika')">Bure</span>
+                <div id="Shika" class="player-description">
+                    <img class="player-imag" src="img/Shika.jpg" alt="">
+                    <p><strong>Имя:</strong> Артем</p>
+                    <p><strong>Возраст:</strong> 21 год</p>
+                    <p><strong>Роль:</strong> Offlane</p>
+                    <p><strong>Родной город:</strong> Фастов, Украина</p>
+                    <p><strong>Любимая еда:</strong> Пельмени</p>
+                    <p><strong>Интересный факт:</strong> Артем — крутил бинанс.</p>
+                    <p><strong>Любимые персонажи:</strong> Mars, Axe, Brewmaster </p>
+                </div>
+            </li>
+        </ul>
+        </ul>
+        <img class="image-back" src="img/image.png" alt="">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+>>>>>>> 4cd796a1e1cff1d7410ed31eba7ace8361d810a8

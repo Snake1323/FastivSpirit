@@ -1,0 +1,158 @@
+<<<<<<< HEAD
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про нас — Fastiv Spirit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="page-wrapper">
+
+        <nav class="nav-bar">
+            <div class="nav-logo" onclick="navigateTo('index')">
+                <img class="nav-logo-img" src="img/image.png" alt="Fastiv Spirit">
+                <span class="nav-logo-text">Fastiv Spirit</span>
+            </div>
+            <div class="nav-links">
+                <a class="nav-link" onclick="navigateTo('news')">Новини</a>
+                <a class="nav-link" onclick="navigateTo('roster')">Склад</a>
+                <a class="nav-link active" onclick="navigateTo('about')">Про нас</a>
+                <a class="nav-link" onclick="navigateTo('randomHerro')">Герої</a>
+            </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <button onclick="navigateTo('index')">Головна</button>
+            <button onclick="navigateTo('news')">Новини</button>
+            <button onclick="navigateTo('roster')">Склад</button>
+            <button onclick="navigateTo('about')">Про нас</button>
+            <button onclick="navigateTo('randomHerro')">Герої</button>
+        </div>
+
+        <!-- ABOUT BANNER -->
+        <section class="about-banner">
+            <div class="about-banner-overlay"></div>
+            <div class="about-banner-content">
+                <div class="section-tag">About</div>
+                <h1 class="about-banner-title">Про команду</h1>
+                <p class="about-banner-sub">Fastiv Spirit — феномен, який змінює майбутнє кіберспорту</p>
+            </div>
+        </section>
+
+        <!-- ABOUT STATS -->
+        <section class="about-stats">
+            <div class="about-stat-item">
+                <div class="about-stat-number">2023</div>
+                <div class="about-stat-label">Рік заснування</div>
+            </div>
+            <div class="about-stat-item">
+                <div class="about-stat-number">5</div>
+                <div class="about-stat-label">Гравців в основі</div>
+            </div>
+            <div class="about-stat-item">
+                <div class="about-stat-number">$15M</div>
+                <div class="about-stat-label">Призових</div>
+            </div>
+            <div class="about-stat-item">
+                <div class="about-stat-number">3x</div>
+                <div class="about-stat-label">Чемпіони TI</div>
+            </div>
+        </section>
+
+        <!-- ABOUT STORY -->
+        <section class="about-story">
+            <div class="about-story-content">
+                <h2 class="about-story-title">Наша <span>історія</span></h2>
+                <p>Fastiv Spirit — домінуюча на арені Dota 2 з 2023 року. Ця кіберспортивна команда родом з Фастова втілює в собі невгамовний дух суперництва. Завдяки низці вражаючих перемог і сміливому підходу до стратегії вони швидко стали грізною силою у світі кіберспорту.</p>
+                <p>Їхній динамічний стиль гри та непохитне прагнення до досконалості завоювали не тільки турніри, але й серця фанатів по всьому світу.</p>
+                <p>Fastiv Spirit — це не просто команда, це феномен, який змінює майбутнє кіберспорту.</p>
+            </div>
+        </section>
+
+        <!-- ABOUT VALUES -->
+        <section class="about-values">
+            <div class="section-header">
+                <div class="section-tag">Values</div>
+                <h2 class="section-title">Наші <span>цінності</span></h2>
+            </div>
+            <div class="about-values-grid">
+                <div class="about-value-card">
+                    <div class="about-value-icon">🔥</div>
+                    <h3 class="about-value-title">Пристрасть</h3>
+                    <p class="about-value-text">Ми живемо Dota 2. Кожна гра — це битва, кожен турнір — це війна.</p>
+                </div>
+                <div class="about-value-card">
+                    <div class="about-value-icon">🤝</div>
+                    <h3 class="about-value-title">Команда</h3>
+                    <p class="about-value-text">Разом ми сильніші. Кожен гравець — важлива частина механізму.</p>
+                </div>
+                <div class="about-value-card">
+                    <div class="about-value-icon">⚡</div>
+                    <h3 class="about-value-title">Динаміка</h3>
+                    <p class="about-value-text">Швидкі рішення, сміливі стратегії, неочікувані ходи.</p>
+                </div>
+                <div class="about-value-card">
+                    <div class="about-value-icon">🏆</div>
+                    <h3 class="about-value-title">Перемога</h3>
+                    <p class="about-value-text">Ми граємо тільки для перемоги. Друге місце — це не наш варіант.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p>© 2024 Fastiv Spirit. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости - Fastiv Spirit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!-- Кнопка гамбургер-меню -->
+     <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Скрытое меню -->
+    <div class="menu" id="menu">
+        <button onclick="navigateTo('news')">Новости</button>
+        <button onclick="navigateTo('roster')">Состав</button>
+        <button onclick="navigateTo('about')">О нас</button>
+        <button onclick="navigateTo('index')">На главную</button>
+        <button onclick="navigateTo('randomHerro')">Рандом Героев</button>
+    </div>
+
+    <div class="main-section">
+        <img class="image-back" src="img/image.png" alt="">
+       <div class="text-about">
+        <h2>Fastiv Spirit - о нас</h2>
+        <p>Fastiv Spirit - Доминирующая на арене Dota 2 с 2023 года, эта киберспортивная команда родом из Фастова воплощает в себе неумолимый дух соперничества. Благодаря череде впечатляющих побед и смелому подходу к стратегии они быстро стали грозной силой в мире эспорта. Их динамичный стиль игры и непоколебимое стремление к совершенству завоевали не только турниры, но и сердца фанатов по всему миру. Fastiv Spirit - это не просто команда, это феномен, который меняет будущее эспорта</p>
+       </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</body>
+</html>
+>>>>>>> 4cd796a1e1cff1d7410ed31eba7ace8361d810a8

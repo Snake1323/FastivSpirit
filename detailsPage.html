@@ -1,0 +1,99 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деталі — Fastiv Spirit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="page-wrapper">
+
+        <nav class="nav-bar">
+            <div class="nav-logo" onclick="navigateTo('index')">
+                <img class="nav-logo-img" src="img/image.png" alt="Fastiv Spirit">
+                <span class="nav-logo-text">Fastiv Spirit</span>
+            </div>
+            <div class="nav-links">
+                <a class="nav-link" onclick="navigateTo('news')">Новини</a>
+                <a class="nav-link" onclick="navigateTo('roster')">Склад</a>
+                <a class="nav-link" onclick="navigateTo('about')">Про нас</a>
+                <a class="nav-link" onclick="navigateTo('randomHerro')">Герої</a>
+            </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <button onclick="navigateTo('index')">Головна</button>
+            <button onclick="navigateTo('news')">Новини</button>
+            <button onclick="navigateTo('roster')">Склад</button>
+            <button onclick="navigateTo('about')">Про нас</button>
+            <button onclick="navigateTo('randomHerro')">Герої</button>
+        </div>
+
+        <div class="page-section">
+            <div class="details-content">
+                <h1>Fastiv Spirit — чемпіони The International!</h1>
+                <p>Неймовірна перемога на головному турнірі року! Наша команда показала видатну гру та здолала всіх суперників на шляху до титулу.</p>
+                <p>Дякуємо всім фанатам за підтримку! Разом ми сила!</p>
+                <iframe width="600" height="400" src="https://www.youtube.com/embed/Dwv5SnKi6y4" frameborder="0" allowfullscreen></iframe>
+                <br>
+                <button class="back-link" onclick="navigateTo('news')">← Назад до новин</button>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <p>© 2024 Fastiv Spirit. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подробности - Fastiv Spirit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!-- Кнопка гамбургер-меню -->
+     <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Скрытое меню -->
+    <div class="menu" id="menu">
+        <button onclick="navigateTo('news')">Новости</button>
+        <button onclick="navigateTo('roster')">Состав</button>
+        <button onclick="navigateTo('about')">О нас</button>
+        <button onclick="navigateTo('index')">На главную</button>
+        <button onclick="navigateTo('randomHerro')">Рандом Героев</button>
+    </div>
+    <div class="main-section">
+        <div class="text-content">
+            <h1>Детали события</h1>
+            <p>Здесь можно добавить описание события, дополнительную информацию и т.д.</p>
+            <iframe width="600" height="400" src="https://www.youtube.com/embed/Dwv5SnKi6y4" frameborder="0" allowfullscreen></iframe>
+            <br><br>
+            <a href="news.html" class="back-link">Назад к новостям</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+>>>>>>> 4cd796a1e1cff1d7410ed31eba7ace8361d810a8
