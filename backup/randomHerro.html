@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Випадковий герой — Fastiv Spirit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="page-wrapper">
+
+        <nav class="nav-bar">
+            <div class="nav-logo" onclick="navigateTo('index')">
+                <img class="nav-logo-img" src="img/image.png" alt="Fastiv Spirit">
+                <span class="nav-logo-text">Fastiv Spirit</span>
+            </div>
+            <div class="nav-links">
+                <a class="nav-link" onclick="navigateTo('news')">Новини</a>
+                <a class="nav-link" onclick="navigateTo('roster')">Склад</a>
+                <a class="nav-link" onclick="navigateTo('about')">Про нас</a>
+                <a class="nav-link active" onclick="navigateTo('randomHerro')">Герої</a>
+            </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <button onclick="navigateTo('index')">Головна</button>
+            <button onclick="navigateTo('news')">Новини</button>
+            <button onclick="navigateTo('roster')">Склад</button>
+            <button onclick="navigateTo('about')">Про нас</button>
+            <button onclick="navigateTo('randomHerro')">Герої</button>
+        </div>
+
+        <div id="menuOverlay" class="menu-overlay" onclick="closeMenu()"></div>
+
+        <div class="page-section">
+            <div class="random-hero-section">
+                <h1 class="page-title">Випадковий герой</h1>
+                <p>Натисніть кнопку нижче, щоб отримати випадкового героя Dota 2!</p>
+                <button class="random-hero-btn" onclick="getHero()">Случайный герой</button>
+                <div id="heroWrapper" style="display: none;">
+                    <p id="heroName"></p>
+                    <img id="heroImage" src="" alt="Hero Image">
+                </div>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <p>© 2024 Fastiv Spirit. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
