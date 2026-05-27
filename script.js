@@ -102,13 +102,20 @@
     }
 
     // ========== MENU / NAVIGATION ==========
-    window.toggleMenu = function() {
+    window.toggleMenu = function(forceClose) {
         const menu = document.getElementById('mobileMenu');
         const hamburger = document.querySelector('.hamburger-menu');
-        if (menu) {
-            menu.classList.toggle('open');
-            hamburger.classList.toggle('active');
-        }
+        const overlay = document.getElementById('menuOverlay');
+        if (!menu) return;
+        const isOpen = forceClose === true ? false : !menu.classList.contains('open');
+        menu.classList.toggle('open', isOpen);
+        if (hamburger) hamburger.classList.toggle('active', isOpen);
+        if (overlay) overlay.classList.toggle('open', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
+
+    window.closeMenu = function() {
+        window.toggleMenu(true);
     };
 
     window.navigateTo = function(page) {

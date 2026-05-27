@@ -10,10 +10,16 @@ html {
 
 body {
     font-family: 'Segoe UI', 'Arial', sans-serif;
-    background: #000;
+    background-color: #050505;
+    background-image:
+        radial-gradient(ellipse at 50% 20%, rgba(255,255,255,0.04) 0%, transparent 65%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.018) 0px, rgba(255,255,255,0.018) 1px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.018) 0px, rgba(255,255,255,0.018) 1px, transparent 1px, transparent 60px);
     color: #fff;
     overflow-x: hidden;
     min-height: 100vh;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 ::-webkit-scrollbar {
@@ -101,6 +107,7 @@ body {
     cursor: pointer;
     background: transparent;
     border: 1px solid transparent;
+    border-radius: 6px;
     transition: all 0.3s;
     position: relative;
 }
@@ -108,11 +115,33 @@ body {
 .nav-link:hover {
     color: #fff;
     border-color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.04);
+    text-shadow: 0 0 15px rgba(255,255,255,0.2);
 }
 
 .nav-link.active {
     color: #fff;
     border-color: #fff;
+    background: rgba(255,255,255,0.06);
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.menu-overlay.open {
+    display: block;
+    opacity: 1;
 }
 
 .hamburger-menu {
@@ -120,6 +149,8 @@ body {
     cursor: pointer;
     z-index: 110;
     padding: 10px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .hamburger-menu .bar {
@@ -197,21 +228,12 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 70%),
-        linear-gradient(0deg, #000 0%, transparent 30%, transparent 70%, #000 100%);
+    background: linear-gradient(0deg, #000 0%, transparent 40%, transparent 60%, #000 100%);
     z-index: 1;
 }
 
 .hero-grid-lines {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    opacity: 0.04;
-    background-image:
-        linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
-    background-size: 60px 60px;
+    display: none;
 }
 
 .hero-content {
@@ -290,6 +312,7 @@ body {
     text-decoration: none;
     cursor: pointer;
     border: 1px solid #fff;
+    border-radius: 8px;
     background: transparent;
     color: #fff;
     transition: all 0.3s;
@@ -408,6 +431,7 @@ body {
     position: relative;
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
     padding: 50px 20px 40px;
     text-align: center;
     cursor: pointer;
@@ -516,6 +540,7 @@ body {
 .achievement-card {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
     padding: 40px 20px;
     text-align: center;
     transition: all 0.3s;
@@ -560,6 +585,7 @@ body {
 .news-card {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
     overflow: hidden;
     transition: all 0.4s;
 }
@@ -573,6 +599,7 @@ body {
     width: 100%;
     height: 180px;
     object-fit: cover;
+    border-radius: 12px 12px 0 0;
     opacity: 0.7;
     transition: opacity 0.3s;
 }
@@ -583,6 +610,7 @@ body {
 
 .news-card-body {
     padding: 24px;
+    border-radius: 0 0 12px 12px;
 }
 
 .news-card-date {
@@ -660,10 +688,12 @@ body {
 .roster-banner-overlay {
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 70%),
-        linear-gradient(0deg, #000 0%, transparent 40%, transparent 60%, #000 100%);
+    background: linear-gradient(0deg, #000 0%, transparent 40%, transparent 60%, #000 100%);
     z-index: 1;
+}
+
+.roster-banner::before {
+    display: none;
 }
 
 .roster-banner::before {
@@ -717,6 +747,7 @@ body {
     background: transparent;
     color: #555;
     border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -748,11 +779,16 @@ body {
     position: relative;
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.4s;
     display: flex;
     flex-direction: column;
+}
+
+.roster-player-card:hover {
+    border-color: rgba(255,255,255,0.2);
 }
 
 .roster-player-card:hover {
@@ -772,6 +808,7 @@ body {
     height: 280px;
     overflow: hidden;
     position: relative;
+    border-radius: 12px 12px 0 0;
 }
 
 .roster-player-img {
@@ -905,12 +942,12 @@ body {
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
     color: #ccc;
-    background: none;
-    border: none;
     cursor: pointer;
-    transition: color 0.3s;
-    text-align: left;
+    transition: all 0.3s;
 }
 
 .player-name-btn:hover {
@@ -990,22 +1027,12 @@ body {
 .about-banner-overlay {
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 70%),
-        linear-gradient(0deg, #000 0%, transparent 40%, transparent 60%, #000 100%);
+    background: linear-gradient(0deg, #000 0%, transparent 40%, transparent 60%, #000 100%);
     z-index: 1;
 }
 
 .about-banner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    opacity: 0.03;
-    background-image:
-        linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
-    background-size: 60px 60px;
+    display: none;
 }
 
 .about-banner-content {
@@ -1050,8 +1077,13 @@ body {
     transition: all 0.3s;
 }
 
+.about-stat-item:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
 .about-stat-item:last-child {
     border-right: 1px solid rgba(255,255,255,0.06);
+    border-radius: 0 8px 8px 0;
 }
 
 .about-stat-item:hover {
@@ -1121,6 +1153,7 @@ body {
 .about-value-card {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
     padding: 50px 28px;
     text-align: center;
     transition: all 0.4s;
@@ -1178,6 +1211,7 @@ body {
     background: transparent;
     color: #fff;
     border: 1px solid #fff;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -1321,16 +1355,442 @@ body {
     border-top: 1px solid rgba(255,255,255,0.04);
 }
 
+.site-footer-inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 .site-footer p {
     font-size: 0.7em;
     color: #333;
     letter-spacing: 2px;
+    margin-top: 16px;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.footer-social-link:hover {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(255,255,255,0.04);
+    transform: translateY(-2px);
+}
+
+.footer-social-link svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
 }
 
 /* ============================
    RESPONSIVE
    ============================ */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 80px 16px 30px;
+        min-height: 90vh;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 10vw, 2.5rem);
+        letter-spacing: 4px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.7em;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .hero-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+        font-size: 0.8em;
+    }
+
+    .hero-logo {
+        width: 50px;
+    }
+
+    .hero-badge {
+        font-size: 0.6em;
+        padding: 4px 14px;
+        white-space: normal;
+    }
+
+    .hero-badge-row {
+        gap: 8px;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    .section {
+        padding: 40px 16px;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: clamp(1.3rem, 6vw, 1.8rem);
+        letter-spacing: 4px;
+    }
+
+    .section-tag {
+        font-size: 0.55em;
+        padding: 3px 14px;
+    }
+
+    .roster-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .player-card {
+        padding: 20px 10px 16px;
+    }
+
+    .player-card-avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .player-card-nick {
+        font-size: 0.75em;
+        letter-spacing: 1px;
+    }
+
+    .player-card-role {
+        font-size: 0.6em;
+        padding: 3px 10px;
+        letter-spacing: 1px;
+    }
+
+    .player-card .card-number {
+        font-size: 1.5em;
+        top: 6px;
+        right: 10px;
+    }
+
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .achievement-card {
+        padding: 24px 12px;
+    }
+
+    .achievement-icon {
+        font-size: 1.8em;
+        margin-bottom: 8px;
+    }
+
+    .achievement-number {
+        font-size: 1.8em;
+        letter-spacing: 2px;
+    }
+
+    .achievement-label {
+        font-size: 0.6em;
+        letter-spacing: 2px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .news-card-img {
+        height: 140px;
+    }
+
+    .news-card-body {
+        padding: 16px;
+    }
+
+    .news-card-title {
+        font-size: 0.85em;
+    }
+
+    .about-banner {
+        min-height: 40vh;
+        padding: 80px 20px 40px;
+    }
+
+    .about-banner-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        letter-spacing: 4px;
+    }
+
+    .about-banner-sub {
+        font-size: 0.7em;
+        letter-spacing: 2px;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 16px 30px;
+        gap: 0;
+    }
+
+    .about-stat-item {
+        padding: 20px 12px;
+    }
+
+    .about-stat-number {
+        font-size: 1.6em;
+        letter-spacing: 2px;
+    }
+
+    .about-stat-label {
+        font-size: 0.6em;
+        letter-spacing: 2px;
+    }
+
+    .about-story {
+        padding: 20px 16px 40px;
+    }
+
+    .about-story-title {
+        font-size: clamp(1.3rem, 6vw, 1.8rem);
+        letter-spacing: 4px;
+        margin-bottom: 24px;
+    }
+
+    .about-story-content p {
+        font-size: 0.85em;
+        line-height: 1.7;
+        letter-spacing: 0.5px;
+        margin-bottom: 16px;
+    }
+
+    .about-values {
+        padding: 0 16px 60px;
+    }
+
+    .about-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .about-value-card {
+        padding: 24px 14px;
+    }
+
+    .about-value-icon {
+        font-size: 1.6em;
+        margin-bottom: 10px;
+    }
+
+    .about-value-title {
+        font-size: 0.85em;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+    .about-value-text {
+        font-size: 0.7em;
+    }
+
+    .roster-banner {
+        min-height: 30vh;
+        padding: 80px 20px 30px;
+    }
+
+    .roster-banner-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        letter-spacing: 4px;
+    }
+
+    .roster-banner-sub {
+        font-size: 0.7em;
+        letter-spacing: 2px;
+    }
+
+    .roster-toggle {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 16px 20px;
+        gap: 8px;
+    }
+
+    .roster-toggle-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 0.75em;
+    }
+
+    .roster-players {
+        padding: 0 16px 40px;
+    }
+
+    .roster-players-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .roster-player-img-wrap {
+        height: 180px;
+    }
+
+    .roster-player-info {
+        padding: 14px 16px;
+    }
+
+    .roster-player-nick {
+        font-size: 1em;
+        letter-spacing: 2px;
+    }
+
+    .roster-player-role {
+        font-size: 0.7em;
+    }
+
+    .roster-player-name {
+        font-size: 0.75em;
+    }
+
+    .roster-player-location {
+        font-size: 0.65em;
+    }
+
+    .roster-player-number {
+        font-size: 2em;
+        top: -36px;
+    }
+
+    .roster-player-detail {
+        padding: 0 16px 14px;
+        padding-top: 12px;
+    }
+
+    .roster-player-detail p {
+        font-size: 0.75em;
+    }
+
+    .page-section {
+        padding: 80px 16px 30px;
+    }
+
+    .page-title {
+        font-size: clamp(1.3rem, 6vw, 1.8rem);
+        letter-spacing: 4px;
+        margin-bottom: 24px;
+        padding-bottom: 14px;
+    }
+
+    .random-hero-section p {
+        font-size: 0.8em;
+        letter-spacing: 1px;
+    }
+
+    .random-hero-btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 0.8em;
+    }
+
+    #heroName {
+        font-size: 1.3em;
+        letter-spacing: 2px;
+    }
+
+    #heroImage {
+        max-width: 200px;
+    }
+
+    .news-page-item {
+        flex-direction: column;
+        gap: 10px;
+        padding: 16px 0;
+    }
+
+    .news-page-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .news-page-content p {
+        font-size: 0.8em;
+        letter-spacing: 0px;
+    }
+
+    .news-page-date {
+        font-size: 0.6em;
+    }
+
+    .details-content h1 {
+        font-size: 1.3em;
+        letter-spacing: 3px;
+    }
+
+    .details-content p {
+        font-size: 0.85em;
+    }
+
+    .details-content iframe {
+        height: 220px;
+    }
+
+    .site-footer {
+        padding: 24px 16px;
+    }
+
+    .site-footer p {
+        font-size: 0.6em;
+    }
+
+    .player-list {
+        max-width: 100%;
+    }
+
+    .player-desc-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .player-name-btn {
+        font-size: 0.8em;
+        padding: 12px 14px;
+        letter-spacing: 2px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
     .nav-links {
         display: none;
     }
@@ -1351,15 +1811,8 @@ body {
         padding: 100px 20px 40px;
     }
 
-    .hero-logo {
-        width: 50px;
-    }
-
-    .hero-badge-row {
-        gap: 8px;
-    }
-
     .hero-title {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
         letter-spacing: 6px;
     }
 
@@ -1367,42 +1820,148 @@ body {
         letter-spacing: 3px;
     }
 
-    .section {
-        padding: 60px 20px;
-    }
-
-    .roster-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
         gap: 12px;
     }
 
+    .hero-btn {
+        width: 280px;
+        text-align: center;
+    }
+
+    .hero-logo {
+        width: 60px;
+    }
+
+    .hero-badge-row {
+        gap: 10px;
+    }
+
+    .section {
+        padding: 50px 20px;
+    }
+
+    .section-title {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        letter-spacing: 4px;
+    }
+
+    .roster-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
     .player-card {
-        padding: 30px 14px 24px;
+        padding: 24px 12px 20px;
     }
 
     .player-card-avatar {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
     }
 
     .player-card-nick {
-        font-size: 0.9em;
+        font-size: 0.8em;
+        letter-spacing: 1px;
+    }
+
+    .player-card-role {
+        font-size: 0.65em;
+        padding: 3px 12px;
     }
 
     .player-card .card-number {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .achievements-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .achievement-card {
+        padding: 30px 16px;
     }
 
     .news-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .about-banner {
+        min-height: 35vh;
+        padding: 100px 30px 50px;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 20px 40px;
+    }
+
+    .about-stat-item {
+        padding: 24px 10px;
+    }
+
+    .about-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .about-value-card {
+        padding: 30px 18px;
+    }
+
+    .about-story {
+        padding: 30px 20px 50px;
+    }
+
+    .roster-banner {
+        min-height: 30vh;
+        padding: 100px 30px 40px;
+    }
+
+    .roster-toggle {
+        flex-direction: row;
+        justify-content: center;
+        padding: 0 20px 20px;
+    }
+
+    .roster-players {
+        padding: 0 20px 50px;
+    }
+
+    .roster-players-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .roster-player-img-wrap {
+        height: 200px;
+    }
+
+    .roster-player-nick {
+        font-size: 1em;
+    }
+
+    .roster-player-number {
+        font-size: 2.5em;
+        top: -40px;
     }
 
     .page-section {
         padding: 100px 20px 40px;
+    }
+
+    .page-title {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        letter-spacing: 4px;
+    }
+
+    .news-page-item {
+        flex-direction: row;
+        gap: 16px;
     }
 
     .player-list {
@@ -1415,41 +1974,19 @@ body {
         text-align: center;
     }
 
-    .news-page-item {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .roster-actions {
-        flex-direction: column;
-    }
-
     .player-name-btn {
         font-size: 0.85em;
         padding: 14px 16px;
         letter-spacing: 2px;
     }
 
-    .roster-players {
-        padding: 0 20px 60px;
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px 40px;
     }
 
-    .roster-players-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .roster-player-img-wrap {
-        height: 200px;
-    }
-
-    .roster-player-nick {
-        font-size: 1.1em;
-    }
-
-    .roster-player-number {
-        font-size: 2.5em;
-        top: -40px;
+    .about-stat-item {
+        border-right: 1px solid rgba(255,255,255,0.06);
     }
 
     .roster-toggle {
