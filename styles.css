@@ -489,6 +489,7 @@ body {
     margin-bottom: 18px;
     border: 2px solid rgba(255,255,255,0.12);
     transition: all 0.4s;
+    display: none;
 }
 
 .player-card:hover .player-card-avatar {
