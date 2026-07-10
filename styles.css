@@ -812,17 +812,7 @@ body {
 }
 
 .roster-player-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-    opacity: 0.85;
-}
-
-.roster-player-img[alt="SoulHarvester"],
-.roster-player-img[alt="aarrtemkk"],
-.roster-player-img[alt="Retr0"] {
-    object-position: center 25%;
+    display: none;
 }
 
 .roster-player-img-wrap::after {
