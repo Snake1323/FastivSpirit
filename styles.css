@@ -552,9 +552,20 @@ body {
 }
 
 .achievement-icon {
-    font-size: 2.5em;
     margin-bottom: 12px;
-    opacity: 0.4;
+}
+
+.achievement-icon svg {
+    width: 56px;
+    height: 56px;
+    fill: currentColor;
+    opacity: 0.5;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.achievement-card:hover .achievement-icon svg {
+    opacity: 1;
+    transform: scale(1.2) rotate(-5deg);
 }
 
 .achievement-number {
@@ -1163,9 +1174,20 @@ body {
 }
 
 .about-value-icon {
-    font-size: 2.5em;
     margin-bottom: 16px;
+}
+
+.about-value-icon svg {
+    width: 56px;
+    height: 56px;
+    fill: currentColor;
     opacity: 0.6;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-value-card:hover .about-value-icon svg {
+    opacity: 1;
+    transform: scale(1.2) rotate(-5deg);
 }
 
 .about-value-title {
@@ -1510,8 +1532,12 @@ body {
     }
 
     .achievement-icon {
-        font-size: 1.8em;
         margin-bottom: 8px;
+    }
+
+    .achievement-icon svg {
+        width: 40px;
+        height: 40px;
     }
 
     .achievement-number {
@@ -1607,8 +1633,12 @@ body {
     }
 
     .about-value-icon {
-        font-size: 1.6em;
         margin-bottom: 10px;
+    }
+
+    .about-value-icon svg {
+        width: 40px;
+        height: 40px;
     }
 
     .about-value-title {
